@@ -8,7 +8,7 @@
     <ProjectGuid>{A8592653-D444-40F9-BD0D-CCD33F83AA94}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Serializers</RootNamespace>
+    <RootNamespace>TreeCore.Serializers</RootNamespace>
     <AssemblyName>Serializers</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -47,7 +47,6 @@
     <Folder Include="Binary\Compress\writer\" />
     <Folder Include="Binary\parser\" />
     <Folder Include="Binary\writer\" />
-    <Folder Include="Interfaces\" />
     <Folder Include="JSON\parser\" />
     <Folder Include="JSON\writer\" />
     <Folder Include="SGML\parser\" />

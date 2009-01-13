@@ -27,7 +27,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\bin\TreeCore\</OutputPath>
+    <OutputPath>..\..\bin\Release\TreeCore\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -41,6 +41,26 @@
   </Target>
   -->
   <ItemGroup>
-    <Folder Include="EAPI\" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbstractNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AbstractNodeList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="INode.cs" />
+    <Compile Include="INodeList.cs" />
+    <Compile Include="Delegates.cs" />
+    <Compile Include="Node.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NodeList.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

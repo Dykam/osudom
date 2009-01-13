@@ -1,0 +1,4 @@
+L:\Documents\Dev\C#\OSUDOM\bin\Release\Serializer\Serializers.dll
+L:\Documents\Dev\C#\OSUDOM\bin\Release\Serializer\Serializers.pdb
+L:\Documents\Dev\C#\OSUDOM\src\Serializer\obj\Release\Serializers.dll
+L:\Documents\Dev\C#\OSUDOM\src\Serializer\obj\Release\Serializers.pdb

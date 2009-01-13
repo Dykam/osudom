@@ -1,12 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TreeCore
+﻿namespace TreeCore
 {
-    interface INode
+    public interface INode
     {
-        public INodeList Parents;
-        public INodeList Nodes;
+        INodeList Parents
+        {
+            get;
+            set;
+        }
+        INodeList Nodes
+        {
+            get;
+            set;
+        }
+        void Remove();
+        void RemoveNodes(uint maxDepth);
     }
 }

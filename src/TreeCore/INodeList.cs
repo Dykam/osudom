@@ -1,15 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TreeCore
+﻿namespace TreeCore
 {
-    interface INodeList
+    public interface INodeList
     {
-        public static INodeList operator +(INodeList nodeList, INodeList inodesToAdd);
-        public static INodeList operator -(INodeList nodeList, INodeList inodesToRemove);
-        public void NextNode();
-        public void PreviousNode();
-        public INode CurrentNode;
+        INodeList Add(INodeList inodesToAdd);
+        INodeList Remove(INodeList inodesToRemove);
+        INode this[int i]
+        {
+            get;
+            set;
+        }
+        uint Length
+        {
+            get;
+        }
     }
 }
