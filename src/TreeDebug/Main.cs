@@ -6,5 +6,9 @@ namespace TreeDebug
 {
     class Main
     {
+        public int Main(string[] args)
+        {
+
+        }
     }
 }

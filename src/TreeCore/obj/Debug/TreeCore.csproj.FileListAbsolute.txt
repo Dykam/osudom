@@ -1,4 +1,3 @@
-L:\Documents\Dev\C#\OSUDOM\src\TreeCore\obj\Debug\ResolveAssemblyReference.cache
 L:\Documents\Dev\C#\OSUDOM\bin\debug\TreeCore\TreeCore.dll
 L:\Documents\Dev\C#\OSUDOM\bin\debug\TreeCore\TreeCore.pdb
 L:\Documents\Dev\C#\OSUDOM\src\TreeCore\obj\Debug\TreeCore.dll
