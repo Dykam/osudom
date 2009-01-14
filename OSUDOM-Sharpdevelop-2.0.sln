@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+# SharpDevelop 2.2.1.2648
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		428FB77A-B9E6-4AE6-AB0B-E7E3E7989593.Debug|Any CPU.Build.0 = Debug|Any CPU
+		428FB77A-B9E6-4AE6-AB0B-E7E3E7989593.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		428FB77A-B9E6-4AE6-AB0B-E7E3E7989593.Release|Any CPU.Build.0 = Release|Any CPU
+		428FB77A-B9E6-4AE6-AB0B-E7E3E7989593.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,4 +1,0 @@
-L:\Documents\Dev\C#\OSUDOM\bin\Debug\Serializer\Serializers.dll
-L:\Documents\Dev\C#\OSUDOM\bin\Debug\Serializer\Serializers.pdb
-L:\Documents\Dev\C#\OSUDOM\src\Serializer\obj\Debug\Serializers.dll
-L:\Documents\Dev\C#\OSUDOM\src\Serializer\obj\Debug\Serializers.pdb
