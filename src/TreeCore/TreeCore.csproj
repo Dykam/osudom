@@ -41,21 +41,9 @@
   </Target>
   -->
   <ItemGroup>
-    <Compile Include="AbstractNode.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="AbstractNodeList.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="INode.cs" />
     <Compile Include="INodeList.cs" />
     <Compile Include="Delegates.cs" />
-    <Compile Include="Node.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="NodeList.cs">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
 </Project>

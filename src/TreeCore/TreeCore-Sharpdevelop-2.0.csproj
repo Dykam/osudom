@@ -40,9 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractNode.cs" />
+    <Compile Include="AbstractNodeList.cs" />
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="Delegates.cs" />
     <Compile Include="INode.cs" />
     <Compile Include="INodeList.cs" />
+    <Compile Include="Node.cs" />
+    <Compile Include="NodeList.cs" />
   </ItemGroup>
 </Project>
