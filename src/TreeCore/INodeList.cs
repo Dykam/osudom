@@ -2,8 +2,8 @@
 {
     public interface INodeList
     {
-        INodeList Add(INodeList inodesToAdd);
-        INodeList Remove(INodeList inodesToRemove);
+        void Add(INodeList inodesToAdd);
+        bool Remove(INodeList inodesToRemove);
         INode this[int i]
         {
             get;
