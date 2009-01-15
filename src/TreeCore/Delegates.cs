@@ -10,4 +10,6 @@
     /// </summary>
     /// <param name="maxDepth">If non-zero, max depth of child-removal.</param>
     public delegate void RemoveNodesHandler(uint maxDepth);
+    public delegate void NodesRemovedEventHandler(object sender, NodesRemovedEventArgs e);
+    public delegate void RemovedEventHandler(object sender, NodeRemovedEventArgs e);
 }

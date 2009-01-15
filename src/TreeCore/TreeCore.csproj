@@ -41,9 +41,20 @@
   </Target>
   -->
   <ItemGroup>
+    <Compile Include="AbstractNode.cs" />
+    <Compile Include="AbstractNodeList.cs" />
     <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="RemovedEventArgs.cs" />
     <Compile Include="INode.cs" />
     <Compile Include="INodeList.cs" />
     <Compile Include="Delegates.cs" />
+    <Compile Include="Node.cs" />
+    <Compile Include="NodeList.cs" />
+    <Compile Include="NodesRemovedEventArgs.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
 </Project>
