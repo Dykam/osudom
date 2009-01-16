@@ -44,12 +44,14 @@
     <Compile Include="AbstractNode.cs" />
     <Compile Include="AbstractNodeList.cs" />
     <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Enums.cs" />
     <Compile Include="NodeRemovedEventArgs.cs" />
     <Compile Include="INode.cs" />
     <Compile Include="INodeList.cs" />
     <Compile Include="Delegates.cs" />
     <Compile Include="Node.cs" />
     <Compile Include="NodeList.cs" />
+    <Compile Include="NodesManager.cs" />
     <Compile Include="NodesRemovedEventArgs.cs" />
   </ItemGroup>
   <ItemGroup>
