@@ -39,4 +39,7 @@
     <Reference Include="System" />
     <Reference Include="System.Xml" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+  </ItemGroup>
 </Project>

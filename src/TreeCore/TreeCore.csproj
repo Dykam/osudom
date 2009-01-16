@@ -44,7 +44,7 @@
     <Compile Include="AbstractNode.cs" />
     <Compile Include="AbstractNodeList.cs" />
     <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="RemovedEventArgs.cs" />
+    <Compile Include="NodeRemovedEventArgs.cs" />
     <Compile Include="INode.cs" />
     <Compile Include="INodeList.cs" />
     <Compile Include="Delegates.cs" />

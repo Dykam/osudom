@@ -3,15 +3,16 @@
     public interface INode
     {
         /// <summary>
-        /// Parent INodes.
+        /// Parent Nodes.
         /// </summary>
         INodeList Parents
         {
             get;
             set;
         }
+        
         /// <summary>
-        /// Child INodes.
+        /// Child Nodes.
         /// </summary>
         INodeList Nodes
         {
