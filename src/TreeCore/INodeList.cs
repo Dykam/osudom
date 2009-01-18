@@ -10,7 +10,7 @@
     	/// Is called when a single Node is removed from this NodeList.
     	/// </summary>
     	event NodeRemovedEventHandler OnRemoved;
-    	
+
     	/// <summary>
     	/// Adds a single Node into this NodeList.
     	/// </summary>
@@ -22,7 +22,7 @@
     	/// </summary>
     	/// <param name="inodesToAdd">The Nodes to be added.</param>
     	/// <returns>Returns the number of Nodes which already did exist in this NodeList.</returns>
-        uint Add(INodeList inodesToAdd);
+        int Add(INodeList inodesToAdd);
         /// <summary>
         /// Removes a single Node from this NodeList.
         /// </summary>
@@ -34,14 +34,14 @@
         /// </summary>
         /// <param name="inodesToRemove">The Nodes to remove.</param>
         /// <returns>Returns the number of Nodes which where not in the NodeList.</returns>
-        uint Remove(INodeList inodesToRemove);
+        int Remove(INodeList inodesToRemove);
         
         INode this[int i]
         {
             get;
             set;
         }
-        uint Length
+        int Length
         {
             get;
         }

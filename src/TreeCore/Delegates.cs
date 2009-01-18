@@ -4,12 +4,12 @@
     /// Is called when complete removal of this <c>Inode</c> and/or childs is explicitly required.
     /// </summary>
     /// <param name="maxDepth">If non-zero, max depth of child-removal.</param>
-    public delegate void RemoveHandler(uint maxDepth);
+    public delegate void RemoveHandler(int maxDepth);
     /// <summary>
     /// Is called when complete removal of this <c>Inode</c>'s childs is explicitly required.
     /// </summary>
     /// <param name="maxDepth">If non-zero, max depth of child-removal.</param>
-    public delegate void RemoveNodesHandler(uint maxDepth);
+    public delegate void RemoveNodesHandler(int maxDepth);
     /// <summary>
     /// Is called when multiple INodes are removed from a INodeList.
     /// </summary>

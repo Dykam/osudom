@@ -1,9 +1,10 @@
+using System;
 namespace TreeCore
 {
 	/// <summary>
-	/// Description of INodesManager.
+    /// Contains some unnecessary functions, implemented by the NodeLists themself.
 	/// </summary>
-	public class NodesManager<TNodeList> where TNodeList : INodeList
+	public class NodesManager<TNodeList> where TNodeList : INodeList, new()
 	{
 		/// <summary>
 		/// Is called when multiple INodes are removed from this INodeList.
@@ -20,13 +21,16 @@ namespace TreeCore
 		/// <param name="node"></param>
 		/// <param name="depth"></param>
 		/// <returns></returns>
-		static uint RemoveChildNodes(INode node, uint depth)
+		static int RemoveChildNodes(INode node, int depth)
 		{
+            throw new NotImplementedException();
+            int reachedDepth;
 			if (depth != 0)
 			{
-				RemoveChildNodes(node, depth);
+                reachedDepth = RemoveChildNodes(node, depth);
 			}
 			RemoveNode(node);
+            return reachedDepth;
 		}
 
 		/// <summary>
@@ -36,43 +40,77 @@ namespace TreeCore
 		/// <returns></returns>
 		static INodeList RemoveNode(INode node)
 		{
-			for (uint i = 0; i < node.Parents.Length; i++)
+            throw new NotImplementedException();
+			for (int i = 0; i < node.Parents.Length; i++)
 			{
-				node.Parents[i].Nodes.Remove(node);
+				node.Parents[Convert.ToInt32(i)].Nodes.Remove(node);
 			}
-			for (uint i = 0; i < node.Nodes.Length; i++)
+			for (int i = 0; i < node.Nodes.Length; i++)
 			{
-				node.Nodes[i].Parents.Remove(node);
+                node.Nodes[Convert.ToInt32(i)].Parents.Remove(node);
 			}
 		}
 
 		/// <summary>
-		/// Inserts a node at a given position.
+        /// Inserts a node at a given position in targetList.
 		/// </summary>
-        /// <param name="position">Position to insert, negative value to count from the end. If position is bigger then the Length of the NodeList, the Node is added to the end. Position is 0-indexed.</param>
+        /// <param name="position">Position to insert, negative value to count from the end. If position is bigger then the Length of the targetList, the Node is added to the end. Position is 0-indexed.</param>
 		/// <param name="node">Node to insert.</param>
-		/// <param name="nodeList">The NodeList to add the Node in.</param>
+        /// <param name="targetList">The NodeList to add the Node in.</param>
 		/// <returns>0-indexed position the Node is added.</returns>
-		static uint InsertNodeAt(int position, INode node, INodeList nodeList)
+        static int InsertNodeAt(int position, INode node, INodeList targetList)
 		{
-            if (position > inodeList.Length)
+            if (position > targetList.Length)
 			{
-				nodeList.Add(node);
-                return nodeList.Length;
+                targetList.Add(node);
+                return targetList.Length;
 			}
 			if (position < 0)
-                position = nodeList.Length - position;
+                position = targetList.Length - position;
 			TNodeList newNodeList = new TNodeList();
-			uint newPos;
-			for (uint i = 0; i < nodeList.Length; i++)
+			int newPos = 0;
+			for (int i = 0; i < targetList.Length; i++)
 			{
-				if (i = position)
+				if (i == position)
 				{
 					newNodeList.Add(node);
 					newPos = i;
 				}
-				newNodeList.Add(nodeList[i]);
+                newNodeList.Add(targetList[i]);
 			}
+            return newPos;
 		}
+
+        /// <summary>
+        /// Inserts a node at a given position.
+        /// </summary>
+        /// <param name="position">Position to insert, negative value to count from the end. If position is bigger then the Length of the targetList, the Node is added to the end. Position is 0-indexed.</param>
+        /// <param name="nodeList">The NodeList to insert.</param>
+        /// <param name="targetList">The NodeList to add the sourceList in.</param>
+        /// <returns>0-indexed position of the first Node added from sourceList.</returns>
+        static int InsertNodesAt(int position, INodeList sourceList, INodeList targetList)
+        {
+            if (position > targetList.Length)
+            {
+                targetList.Add(sourceList);
+                return targetList.Length;
+            }
+            if (position < 0)
+                position = targetList.Length - position;
+            TNodeList newNodeList = new TNodeList();
+            int newPos = 0;
+            for (int i = 0; i < targetList.Length; i++)
+            {
+                if (i == position)
+                {
+                    newNodeList.Add(sourceList);
+                    newPos = i;
+                }
+                newNodeList.Add(targetList[i]);
+            }
+            targetList.Remove(targetList);
+            targetList.Add(newNodeList);
+            return newPos;
+        }
 	}
 }

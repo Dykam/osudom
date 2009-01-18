@@ -39,7 +39,7 @@
   </Target>
   -->
   <ItemGroup>
-    <Compile Include="Main.cs" />
+    <Compile Include="program.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

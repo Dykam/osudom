@@ -41,7 +41,6 @@
   </Target>
   -->
   <ItemGroup>
-    <Compile Include="AbstractNode.cs" />
     <Compile Include="AbstractNodeList.cs" />
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="Enums.cs" />

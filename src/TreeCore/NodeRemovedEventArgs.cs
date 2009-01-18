@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace TreeCore
 {
-    class NodeRemovedEventArgs : EventArgs
+    public class NodeRemovedEventArgs : EventArgs
     {
         private INode _node;
 

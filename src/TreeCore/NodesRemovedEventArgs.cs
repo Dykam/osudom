@@ -1,19 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace TreeCore
 {
-    class NodesRemovedEventArgs : EventArgs
+    public class NodesRemovedEventArgs : EventArgs
     {
-        private uint _depth;
+        private int _depth;
 
-        public NodesRemovedEventArgs(uint depth)
+        public NodesRemovedEventArgs(int depth)
         {
             _depth = depth;
         }
 
-        public uint Depth
+        public int Depth
         {
             get { return _depth; }
         }
