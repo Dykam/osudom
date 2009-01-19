@@ -47,6 +47,11 @@
         /// <param name="inodesToRemove">The Nodes to remove.</param>
         /// <returns>Returns the number of Nodes which where not in the NodeList.</returns>
         int Remove(INodeList inodesToRemove);
+
+        /// <summary>
+        /// Checks for and removes doubles.
+        /// </summary>
+        void CleanUp();
         
         INode this[int i]
         {

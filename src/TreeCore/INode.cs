@@ -3,6 +3,11 @@
     public interface INode
     {
         /// <summary>
+        /// Is called when all References
+        /// </summary>
+        event NodeRemovedEventHandler OnNodeRemoved;
+
+        /// <summary>
         /// Parent Nodes.
         /// </summary>
         INodeList Parents
@@ -24,6 +29,17 @@
         /// Lets a Node to be garbage collected by removing all references to this Node.
         /// </summary>
         void Remove();
+
+        /// <summary>
+        /// Removes all references to this Node in Parents, being a new Tree-top afterwards.
+        /// </summary>
+        void Split();
+        /// <summary>
+        /// Removes all references to this Node in Parents, being a new Tree-top afterwards.
+        /// </summary>
+        /// <param name="depth">The depth to look for references to Parent.</param>
+        /// <returns>Returns true if the lookup reached a Parent Node.</returns>
+        bool Split(int depth);
 
         /// <summary>
         /// Completely removes all childNodes to a specified depth.

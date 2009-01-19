@@ -18,4 +18,8 @@
     /// Is called when a single INode is removed from a INodeList.
     /// </summary>
     public delegate void NodeRemovedEventHandler(object sender, NodeRemovedEventArgs e);
+    /// <summary>
+    /// Is called when a single INode is Splitted from his Parents.
+    /// </summary>
+    public delegate void NodeSplittedEventHandler(object sender, NodeSplittedEventArgs e);
 }
