@@ -6,6 +6,8 @@ namespace TreeCore
 	/// </summary>
 	public class NodesManager<TNodeList> where TNodeList : INodeList, new()
 	{
+		/************
+		 * Deprecated
 		/// <summary>
 		/// Is called when multiple INodes are removed from this INodeList.
 		/// </summary>
@@ -14,7 +16,10 @@ namespace TreeCore
 		/// Is called when a single INode is removed from this INodeList.
 		/// </summary>
 		static event NodeRemovedEventHandler OnRemoved;
-
+		*/
+		
+		/************
+		 * Deprecated
 		/// <summary>
 		/// Lets all Node to be garbage collected by removing all references to them.
 		/// </summary>
@@ -31,8 +36,10 @@ namespace TreeCore
 			}
 			RemoveNode(node);
             return reachedDepth;
-		}
+		}*/
 
+		/************
+		 * Deprecated
 		/// <summary>
 		/// Lets a Node to be garbage collected by removing all references to this Node.
 		/// </summary>
@@ -49,8 +56,10 @@ namespace TreeCore
 			{
                 node.Nodes[Convert.ToInt32(i)].Parents.Remove(node);
 			}
-		}
+		}*/
 
+		/************
+		 * Deprecated
 		/// <summary>
         /// Inserts a node at a given position in targetList.
 		/// </summary>
@@ -79,8 +88,10 @@ namespace TreeCore
                 newNodeList.Add(targetList[i]);
 			}
             return newPos;
-		}
+		}*/
 
+		/************
+		 * Deprecated
         /// <summary>
         /// Inserts a node at a given position.
         /// </summary>
@@ -111,6 +122,6 @@ namespace TreeCore
             targetList.Remove(targetList);
             targetList.Add(newNodeList);
             return newPos;
-        }
+        }*/
 	}
 }
