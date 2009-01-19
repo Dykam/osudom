@@ -21,7 +21,7 @@ namespace TreeCore
 		/************
 		 * Deprecated
 		/// <summary>
-		/// Lets all Node to be garbage collected by removing all references to them.
+		/// Lets all Nodes to be garbage collected by removing all references to them.
 		/// </summary>
 		/// <param name="node"></param>
 		/// <param name="depth"></param>
@@ -93,7 +93,7 @@ namespace TreeCore
 		/************
 		 * Deprecated
         /// <summary>
-        /// Inserts a node at a given position.
+        /// Inserts nodes at a given position.
         /// </summary>
         /// <param name="position">Position to insert, negative value to count from the end. If position is bigger then the Length of the targetList, the Node is added to the end. Position is 0-indexed.</param>
         /// <param name="nodeList">The NodeList to insert.</param>
