@@ -1,4 +1,5 @@
-﻿namespace TreeCore
+﻿using System;
+namespace TreeCore
 {
     public class NodeList : AbstractNodeList
     {

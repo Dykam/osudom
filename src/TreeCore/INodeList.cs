@@ -1,15 +1,20 @@
-﻿namespace TreeCore
+﻿using System;
+namespace TreeCore
 {
     public interface INodeList
     {
-    	/// <summary>
-    	/// Is called when multiple Nodes are removed from this NodeList.
-    	/// </summary>
-    	event NodesRemovedEventHandler OnNodesRemoved;
-    	/// <summary>
-    	/// Is called when a single Node is removed from this NodeList.
-    	/// </summary>
-    	event NodeRemovedEventHandler OnRemoved;
+        /// <summary>
+        /// 
+        /// </summary>
+        event ListCleanedUpHandler OnListCleanUp;
+        /// <summary>
+        /// Is called when a single Node is removed from this NodeList.
+        /// </summary>
+        event ListNodeRemovedHandler OnNodeRemoved;
+        /// <summary>
+        /// Is called when multiple Nodes are removed from this NodeList.
+        /// </summary>
+        event ListNodesRemovedHandler OnNodesRemoved;
 
     	/// <summary>
     	/// Adds a single Node into this NodeList.
@@ -38,12 +43,14 @@
         /// <summary>
         /// Removes a single Node from this NodeList.
         /// </summary>
+        /// <remarks>This will not remove the Node itself!</remarks>
         /// <param name="inodeToRemove">The Node to remove.</param>
         /// <returns>Returns false if the Node was not in this NodeList.</returns>
         bool Remove(INode inodeToRemove);
         /// <summary>
         /// Removes multiple Nodes from this NodeList.
         /// </summary>
+        /// /// <remarks>This will not remove the Nodes themselves!</remarks>
         /// <param name="inodesToRemove">The Nodes to remove.</param>
         /// <returns>Returns the number of Nodes which where not in the NodeList.</returns>
         int Remove(INodeList inodesToRemove);
@@ -52,12 +59,21 @@
         /// Checks for and removes doubles.
         /// </summary>
         void CleanUp();
-        
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
         INode this[int index]
         {
             get;
             set;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
         int Length
         {
             get;

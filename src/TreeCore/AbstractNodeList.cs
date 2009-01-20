@@ -1,4 +1,5 @@
-﻿namespace TreeCore
+﻿using System;
+namespace TreeCore
 {
     public abstract class AbstractNodeList : INodeList // Not finished, need to switch some events
     {
@@ -17,10 +18,6 @@
 
 
         #region INodeList Members
-
-        public event NodesRemovedEventHandler OnNodesRemoved;
-
-        public event NodeRemovedEventHandler OnRemoved;
 
         public void Add(INode inodeToAdd)
         {
@@ -43,13 +40,13 @@
         }
 
         public bool Remove(INode inodeToRemove)
-        {            
-            Remove(inodeToRemove);
+        {   
+            return Remove(inodeToRemove);
         }
 
         public int Remove(INodeList inodesToRemove)
         {
-            Remove(inodesToRemove);
+            return Remove(inodesToRemove);
         }
 
         public void CleanUp()

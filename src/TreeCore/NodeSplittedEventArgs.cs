@@ -1,49 +1,58 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace TreeCore
 {
+    /// <summary>
+    /// 
+    /// </summary>
     class NodeSplittedEventArgs
     {
-        private INode _node;
-
-        public INode Node
-        {
-            get { return _node; }
-        }
-        private INodeList _childNodes;
-
-        public INodeList ChildNodes
-        {
-            get { return _childNodes; }
-        }
+        /// <summary>
+        /// 
+        /// </summary>
         private INodeList _exParents;
-
-        private int _depth;
-
-        public int Depth
-        {
-            get { return _depth; }
-        }
-
         public INodeList ExParents
         {
             get { return _exParents; }
         }
-        public NodeSplittedEventArgs(INode node, INodeList childNodes, INodeList exParents)
+        /// <summary>
+        /// 
+        /// </summary>
+        private INode _discoveredParent;
+        public INode DiscoveredParent
         {
-            _node = node;
-            _childNodes = childNodes;
-            _parents = parents;
-            _depth = 0;
+            get { return _discoveredParent; }
         }
-        public NodeSplittedEventArgs(INode node, INodeList childNodes, INodeList exParents, int realSplitDepth)
+        /// <summary>
+        /// 
+        /// </summary>
+        private INode _node;
+        public INode Node
+        {
+            get { return _node; }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="node"></param>
+        /// <param name="exParents"></param>
+        /// <param name="discoveredParent"></param>
+        public NodeSplittedEventArgs(INode node, NodeList exParents, INode discoveredParent)
         {
             _node = node;
-            _childNodes = childNodes;
-            _parents = parents;
-            _depth = Depth;
+            _exParents = exParents;
+            _discoveredParent = discoveredParent;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="node"></param>
+        /// <param name="exParents"></param>
+        public NodeSplittedEventArgs(INode node, NodeList exParents)
+        {
+            _node = node;
+            _exParents = exParents;
+            _discoveredParent = null;
         }
     }
 }

@@ -1,15 +1,15 @@
 ﻿using System;
 namespace TreeCore
 {
-    class NodeRemovedEventArgs
+    class NodesAddedEventArgs
     {
-        private INode _node;
+        private INodeList _nodes;
 
-        public INode Node
+        public INodeList Nodes
         {
             get { return _node; }
         }
-        public NodeRemovedEventArgs(INode node)
+        public NodesAddedEventArgs(INodeList nodes)
         {
             _node = node;
         }

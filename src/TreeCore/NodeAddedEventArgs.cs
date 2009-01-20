@@ -1,7 +1,7 @@
 ﻿using System;
 namespace TreeCore
 {
-    class NodeRemovedEventArgs
+    class NodeAddedEventArgs
     {
         private INode _node;
 
@@ -9,7 +9,7 @@ namespace TreeCore
         {
             get { return _node; }
         }
-        public NodeRemovedEventArgs(INode node)
+        public NodeAddedEventArgs(INode node)
         {
             _node = node;
         }

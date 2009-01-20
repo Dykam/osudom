@@ -1,3 +1,4 @@
+using System;
 namespace TreeCore
 {
 	public enum NodeListType : byte
