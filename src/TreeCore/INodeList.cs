@@ -53,7 +53,7 @@
         /// </summary>
         void CleanUp();
         
-        INode this[int i]
+        INode this[int index]
         {
             get;
             set;

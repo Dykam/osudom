@@ -1,7 +1,20 @@
 ﻿namespace TreeCore
 {
-    public abstract class AbstractNodeList : INodeList
+    public abstract class AbstractNodeList : INodeList // Not finished, need to switch some events
     {
+        #region internalMembers
+        abstract private void internalAdd(INodeList inodesToAdd);
+        abstract private void internalAdd(INodeList inodesToAdd);
+        abstract private void internalInsertNodeAt(int position, INode node);
+        abstract private void internalInsertNodesAt(int position, INodeList nodes);
+        abstract private bool internalRemove(INode inodeToRemove);
+        abstract private int internalRemove(INodeList inodesToRemove);
+        abstract private void internalCleanUp();
+        abstract private INode internalGetInode(int index);
+        abstract private void internalSetInode(int index, INode node);
+        abstract private int internalLenght { get; }
+        #endregion
+
 
         #region INodeList Members
 
@@ -11,54 +24,57 @@
 
         public void Add(INode inodeToAdd)
         {
-            throw new System.NotImplementedException();
+            internalAdd(inodeToAdd);
         }
 
         public void Add(INodeList inodesToAdd)
         {
-            throw new System.NotImplementedException();
+            internalAdd(inodesToAdd);
         }
 
         public int InsertNodeAt(int position, INode node)
         {
-            throw new System.NotImplementedException();
+            internalInsertNodeAt(position, node);
         }
 
         public int InsertNodesAt(int position, INodeList nodes)
         {
-            throw new System.NotImplementedException();
+            internalInsertNodesAt(position, nodes);
         }
 
         public bool Remove(INode inodeToRemove)
-        {
-            throw new System.NotImplementedException();
+        {            
+            Remove(inodeToRemove);
         }
 
         public int Remove(INodeList inodesToRemove)
         {
-            throw new System.NotImplementedException();
+            Remove(inodesToRemove);
         }
 
         public void CleanUp()
         {
-            throw new System.NotImplementedException();
+            CleanUp();
         }
 
-        public INode this[int i]
+        public INode this[int index]
         {
             get
             {
-                throw new System.NotImplementedException();
+                return internalGetInode(index);
             }
             set
             {
-                throw new System.NotImplementedException();
+                internalSetInode(index, value);
             }
         }
 
         public int Length
         {
-            get { throw new System.NotImplementedException(); }
+            get
+            {
+                return internalLenght;
+            }
         }
 
         #endregion
