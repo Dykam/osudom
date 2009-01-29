@@ -5,50 +5,65 @@ namespace TreeCore
     {
         #region INode Members
 
-        public event NodeRemovedEventHandler OnNodeRemoved;
+        /// <summary>
+        /// Is called when this Node is deleted.
+        /// </summary>
+        public event NodeDeletedHandler NodeDeleted;
+        /// <summary>
+        /// Is called when this Nodes ChildNodes are deleted.
+        /// </summary>
+        public event ChildNodesDeletedHandler ChildNodesDeleted;
+        /// <summary>
+        /// Is called when this node is splitted from his parents.
+        /// </summary>
+        public event NodeSplittedEventHandler NodeSplitted;
 
+        private NodeList parents;
         public INodeList Parents
         {
             get
             {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-                throw new System.NotImplementedException();
+                return parents;
             }
         }
-
+        private NodeList nodes;
         public INodeList Nodes
         {
             get
             {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-                throw new System.NotImplementedException();
+                return nodes;
             }
         }
 
-        public void Remove()
+        public void Delete()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
+            if (NodeDeleted != null)
+                NodeDeleted(this, new NodeDeletedEventArgs());
         }
 
         public void Split()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
+            uint reachedDepth = 0;
+            if (NodeSplitted != null)
+                NodeSplitted(this, new NodeSplittedEventArgs(parents, reachedDepth));
         }
 
-        public bool Split(int depth)
+        public void Split(uint depth)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
+            uint reachedDepth = 0;
+            if (NodeSplitted != null)
+                NodeSplitted(this, new NodeSplittedEventArgs(parents, reachedDepth));
         }
 
-        public int RemoveChildNodes(int depth)
+        public int DeleteChildNodes(uint depth)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
+            uint reachedDepth = 0;
+            if(ChildNodesDeleted != null)
+                ChildNodesDeleted(this, new ChildNodesDeletedEventArgs(reachedDepth));
         }
 
         #endregion

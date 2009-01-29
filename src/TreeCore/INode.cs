@@ -6,11 +6,15 @@ namespace TreeCore
         /// <summary>
         /// Is called when this Node is deleted.
         /// </summary>
-        NodeDeletedHandler NodeDeleted;
+        event NodeDeletedHandler NodeDeleted;
         /// <summary>
         /// Is called when this Nodes ChildNodes are deleted.
         /// </summary>
-        ChildNodesDeletedHandler ChildNodesDeleted;
+        event ChildNodesDeletedHandler ChildNodesDeleted;
+        /// <summary>
+        /// Is called when this node is splitted from his parents.
+        /// </summary>
+        event NodeSplittedEventHandler NodeSplitted;
 
         /// <summary>
         /// Parent Nodes.
@@ -18,7 +22,6 @@ namespace TreeCore
         INodeList Parents
         {
             get;
-            set;
         }
         
         /// <summary>
@@ -27,7 +30,6 @@ namespace TreeCore
         INodeList Nodes
         {
             get;
-            set;
         }
 
         /// <summary>
