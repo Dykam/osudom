@@ -3,7 +3,18 @@ namespace TreeCore
 {
     public interface INodeList
     {
+        /// <summary>
+        /// Is called when Nodes are added tho this NodeList
+        /// </summary>
         event NodesAddedEventHandler NodesAdded;
+        /// <summary>
+        /// Is called when this NodeList is cleaned up.
+        /// </summary>
+        event CleanedUpHandler CleanedUp;
+        /// <summary>
+        /// Is called when Nodes are removed from this NodeList.
+        /// </summary>
+        event NodesRemovedHandler NodesRemoved;
 
     	/// <summary>
     	/// Adds a single Node into this NodeList.
@@ -50,10 +61,10 @@ namespace TreeCore
         void CleanUp();
 
         /// <summary>
-        /// 
+        /// Returns a Node from the specified index.
         /// </summary>
-        /// <param name="index"></param>
-        /// <returns></returns>
+        /// <param name="index">The index to get the Node from.</param>
+        /// <returns>A Node from the specified index.</returns>
         INode this[int index]
         {
             get;

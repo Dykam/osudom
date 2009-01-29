@@ -4,9 +4,13 @@ namespace TreeCore
     public interface INode
     {
         /// <summary>
-        /// Is called when all References
+        /// Is called when this Node is deleted.
         /// </summary>
-        event NodeRemovedEventHandler OnNodeRemoved;
+        NodeDeletedHandler NodeDeleted;
+        /// <summary>
+        /// Is called when this Nodes ChildNodes are deleted.
+        /// </summary>
+        ChildNodesDeletedHandler ChildNodesDeleted;
 
         /// <summary>
         /// Parent Nodes.
@@ -33,19 +37,19 @@ namespace TreeCore
         /// <summary>
         /// Removes all references to this Node in Parents, being a new Tree-top afterwards.
         /// </summary>
+        /// <remarks>This function does not always have a loop-detection.</remarks>
         void Split();
         /// <summary>
         /// Removes all references to this Node in Parents, being a new Tree-top afterwards.
         /// </summary>
-        /// <param name="depth">The depth to look for references to Parent.</param>
-        /// <returns>Returns true if the lookup reached a Parent Node.</returns>
-        bool Split(int depth);
+        /// <param name="depth">The depth for removing references from parents from ChildNodes. Time will increase exponentially.</param>
+        void Split(uint depth);
 
         /// <summary>
         /// Completely removes all childNodes to a specified depth.
         /// </summary>
         /// <param name="depth">The depth the childNodes should be removed.</param>
         /// <returns>Reached depth.</returns>
-        int DeleteChildNodes(int depth);
+        int DeleteChildNodes(uint depth);
     }
 }
