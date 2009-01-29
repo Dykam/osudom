@@ -29,7 +29,7 @@ namespace TreeCore
         private NodeList nodes;
         public INodeList Nodes
         {
-            get
+            get 
             {
                 return nodes;
             }
@@ -38,6 +38,14 @@ namespace TreeCore
         public void Delete()
         {
             throw new NotImplementedException();
+            for (uint i = 0; i < parents.Length; i++)
+            {
+                parents[i].Nodes.RemoveNode(this);
+            }
+            for (uint i = 0; i < nodes.Length; i++)
+            {
+                nodes[i].Parents.RemoveNode(this);
+            }
             if (NodeDeleted != null)
                 NodeDeleted(this, new NodeDeletedEventArgs());
         }
