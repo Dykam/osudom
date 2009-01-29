@@ -43,20 +43,12 @@
   <ItemGroup>
     <Compile Include="AbstractNodeList.cs" />
     <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="ChildNodesRemovedEventArgs.cs" />
-    <Compile Include="ListCleanedUpEventArgs.cs" />
-    <Compile Include="NodeSplittedEventArgs.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="INode.cs" />
     <Compile Include="INodeList.cs" />
     <Compile Include="Delegates.cs" />
-    <Compile Include="NodeAddedEventArgs.cs" />
-    <Compile Include="ListNodeRemoved.cs" />
-    <Compile Include="ListNodesRemovedEventArgs.cs" />
     <Compile Include="Node.cs" />
     <Compile Include="NodeList.cs" />
-    <Compile Include="NodeRemovedEventArgs.cs" />
-    <Compile Include="NodesAddedEventArgs.cs" />
     <Compile Include="NodesManager.cs" />
   </ItemGroup>
 </Project>

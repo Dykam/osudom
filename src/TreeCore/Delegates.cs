@@ -1,30 +1,7 @@
 ﻿using System;
 namespace TreeCore
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="sender"></param>
-    /// <param name="e"></param>
-    public delegate void NodesRemovedEventHandler(object sender, NodesRemovedEventArgs e);
-    /// <summary>
-    /// Is called when a single INode is removed from a INodeList.
-    /// </summary>
-    /// <param name="sender"></param>
-    /// <param name="e"></param>
-    public delegate void NodeRemovedEventHandler(object sender, NodeRemovedEventArgs e);
-    /// <summary>
-    /// Is called when a single INode is Splitted from his Parents.    ///
-    /// </summary>
-    /// <param name="sender"></param>
-    /// <param name="e"></param>
-    public delegate void NodeSplittedEventHandler(object sender, NodeSplittedEventArgs e);
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="sender"></param>
-    /// <param name="e"></param>
-    public delegate void NodeAddedEventHandler(object sender, NodeAddedEventArgs e);
+	#region ListDelegates
     /// <summary>
     /// 
     /// </summary>
@@ -36,35 +13,29 @@ namespace TreeCore
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    public delegate void NodeSplittedEventHandler(object sender, NodeSplittedEventArgs e);
+    public delegate void NodesSplittedEventHandler(object sender, NodesSplittedEventArgs e);
     /// <summary>
     /// 
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    public delegate void ListCleanedUpHandler(object sender, EventArgs e);
+    public delegate void CleanedUpHandler(object sender, ListCleanedUpEventArgs e);
     /// <summary>
     /// 
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    public delegate void ListCleanedUpHandler(object sender, ListCleanedUpEventArgs e);
+    public delegate void NodesRemovedHandler(object sender, NodesRemovedEventArgs e);
+    #endregion
+    
+    #region NodeDelegates
     /// <summary>
     /// 
     /// </summary>
-    /// <param name="sender"></param>
-    /// <param name="e"></param>
-    public delegate void ListNodeRemovedHandler(object sender, ListNodeRemovedEventArgs e);
+    public delegate void NodeDeletedHandler(object sender, NodeDeletedEventArgse e);
     /// <summary>
     /// 
     /// </summary>
-    /// <param name="sender"></param>
-    /// <param name="e"></param>
-    public delegate void ListNodesRemovedHandler(object sender, ListNodesRemovedEventArgs e);
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="sender"></param>
-    /// <param name="e"></param>
-    public delegate void ChildNodesRemovedHandler(object sender, ChildNodesRemovedEventArgs e);
+    public delegate void ChildNodesDeletedHandler(object sender, ChildNodesDeletedEventArgs e);
+    #endregion
 }

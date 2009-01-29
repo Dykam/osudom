@@ -29,8 +29,7 @@ namespace TreeCore
         /// <summary>
         /// Lets a Node to be garbage collected by removing all references to this Node.
         /// </summary>
-        void Remove();
-
+        void Delete();
         /// <summary>
         /// Removes all references to this Node in Parents, being a new Tree-top afterwards.
         /// </summary>
@@ -47,6 +46,6 @@ namespace TreeCore
         /// </summary>
         /// <param name="depth">The depth the childNodes should be removed.</param>
         /// <returns>Reached depth.</returns>
-        int RemoveChildNodes(int depth);
+        int DeleteChildNodes(int depth);
     }
 }
