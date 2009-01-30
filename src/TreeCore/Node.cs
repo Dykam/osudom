@@ -5,11 +5,11 @@ namespace TreeCore
     {
         #region INode Members
         
-        #region NodeDeletedHandler NodeDeleted
+        #region NodeDeletedEventHandler NodeDeleted
         /// <summary>
         /// Is called when this Node is deleted.
         /// </summary>
-        private event NodeDeletedHandler nodeDeleted;
+        private event NodeDeletedEventHandler nodeDeleted;
         /// <summary>
 		/// Lock for NodeDeleted delegate access.
 		/// </summary>
@@ -17,7 +17,7 @@ namespace TreeCore
 		/// <summary>
 		/// Is called when this Node is deleted.
 		/// </summary>
-        public event NodeDeletedHandler NodeDeleted
+        public event NodeDeletedEventHandler NodeDeleted
         {
         	add
         	{
@@ -40,7 +40,7 @@ namespace TreeCore
         /// <param name="e"></param>
 		protected void OnNodeDeleted(NodeDeletedEventArgs e)
 		{			
-			NodeDeletedHandler handler;
+			NodeDeletedEventHandler handler;
 		    lock (nodeDeletedLock)
 		    {
 		        handler = nodeDeleted;
@@ -51,11 +51,11 @@ namespace TreeCore
 		}
 		#endregion
 		
-		#region ChildNodesDeletedHandler ChildNodesDeleted
+		#region ChildNodesDeletedEventHandler ChildNodesDeleted
         /// <summary>
         /// Is called when this Nodes ChildNodes are deleted.
         /// </summary>
-        private event ChildNodesDeletedHandler childNodesDeleted;
+        private event ChildNodesDeletedEventHandler childNodesDeleted;
         /// <summary>
 		/// Lock for NodeDeleted delegate access.
 		/// </summary>
@@ -63,7 +63,7 @@ namespace TreeCore
 		/// <summary>
 		/// Is called when this Node is deleted.
 		/// </summary>
-        public event ChildNodesDeletedHandler ChildNodesDeleted
+        public event ChildNodesDeletedEventHandler ChildNodesDeleted
         {
         	add
         	{
@@ -86,7 +86,7 @@ namespace TreeCore
         /// <param name="e"></param>
 		protected void OnChildNodesDeleted(ChildNodesDeletedEventArgs e)
 		{			
-			ChildNodesDeletedHandler handler;
+			ChildNodesDeletedEventHandler handler;
 		    lock (childNodesDeletedLock)
 		    {
 		        handler = childNodesDeleted;
@@ -164,29 +164,54 @@ namespace TreeCore
         {
             while (parents.Length != 0)
             {
-                parents[i].Nodes.RemoveNode(this);
+                parents[0].Nodes.Remove(this);
                 parents.Remove(parents[0]);
             }
             while (nodes.Length != 0)
             {
-                nodes[i].Parents.RemoveNode(this);
+                nodes[0].Parents.Remove(this);
                 nodes.Remove(nodes[0]);
             }
-            if (NodeDeleted != null)
-                NodeDeleted(this, new NodeDeletedEventArgs());
+            OnNodeDeleted(new NodeDeletedEventArgs());
         }
 
         public void Split()
         {
             throw new NotImplementedException();
+            uint reachedDepth = 0;
             while(nodes.Length != 0)
             {
-            	INode node = nodes[0];
-            	uint localReachedDepth = node.Split();
-            	node.Parents.Add(this);
+                INode childNode = nodes[0];
+                uint localReachedDepth = Node.Split(this);
+                childNode.Parents.Add(this);
+                if (localReachedDepth > reachedDepth)
+                    reachedDepth = localReachedDepth;
             }
-            if (NodeSplitted != null)
-                NodeSplitted(this, new NodeSplittedEventArgs(parents, reachedDepth));
+            OnNodeSplitted(new NodeSplittedEventArgs(parents, reachedDepth));
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
+        private static uint Split(INode node)
+        {
+            uint reachedDepth = 0;
+            while (node.Nodes.Length != 0)
+            {
+                INode childNode = node.Nodes[0];
+                uint localReachedDepth = Node.Split(childNode);
+                childNode.Parents.Add(node);
+                node.Nodes.Add(node);
+                if (localReachedDepth > reachedDepth)
+                    reachedDepth = localReachedDepth;
+            }
+            while (node.Parents.Length != 0)
+            {
+                node.Parents[0].Nodes.Remove(node);
+                node.Parents.Remove(node.Parents[0]);
+            }
+            return ++reachedDepth;
         }
         public uint Split(uint depth)
         {
@@ -205,12 +230,11 @@ namespace TreeCore
             	parents[0].Nodes.Remove(this);
             	parents.Remove(parents[0]);
             }
-            if (NodeSplitted != null)
-                NodeSplitted(this, new NodeSplittedEventArgs(parents, reachedDepth));
+            OnNodeSplitted(new NodeSplittedEventArgs(parents, reachedDepth));
             return ++reachedDepth;
         }
 
-        public int DeleteChildNodes(uint depth)
+        public uint DeleteChildNodes(uint depth)
         {
             uint reachedDepth = 0;
             while(nodes.Length != 0)
@@ -220,8 +244,7 @@ namespace TreeCore
             		reachedDepth = localReachedDepth;
             	nodes[0].Delete();
             }
-            if(ChildNodesDeleted != null)
-                ChildNodesDeleted(this, new ChildNodesDeletedEventArgs(reachedDepth));
+            OnChildNodesDeleted(new ChildNodesDeletedEventArgs(reachedDepth));
             return ++reachedDepth;
         }
 

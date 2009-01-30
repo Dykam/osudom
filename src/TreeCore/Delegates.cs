@@ -13,13 +13,13 @@ namespace TreeCore
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    public delegate void CleanedUpHandler(object sender, CleanedUpEventArgs e);
+    public delegate void CleanedUpEventHandler(object sender, CleanedUpEventArgs e);
     /// <summary>
     /// 
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    public delegate void NodesRemovedHandler(object sender, NodesRemovedEventArgs e);
+    public delegate void NodesRemovedEventHandler(object sender, NodesRemovedEventArgs e);
     #endregion
     
     #region NodeDelegates
@@ -28,13 +28,13 @@ namespace TreeCore
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    public delegate void NodeDeletedHandler(object sender, NodeDeletedEventArgs e);
+    public delegate void NodeDeletedEventHandler(object sender, NodeDeletedEventArgs e);
     /// <summary>
     /// 
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    public delegate void ChildNodesDeletedHandler(object sender, ChildNodesDeletedEventArgs e);
+    public delegate void ChildNodesDeletedEventHandler(object sender, ChildNodesDeletedEventArgs e);
     /// <summary>
     /// 
     /// </summary>

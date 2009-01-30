@@ -2,7 +2,7 @@
 
 namespace TreeCore
 {
-    class NodeSplittedEventArgs : EventArgs
+    public class NodeSplittedEventArgs : EventArgs
     {
         /// <summary>
         /// 

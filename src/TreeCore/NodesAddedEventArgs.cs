@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TreeCore
 {
-    class NodesAddedEventArgs : EventArgs
+    public class NodesAddedEventArgs : EventArgs
     {
         /// <summary>
         /// 

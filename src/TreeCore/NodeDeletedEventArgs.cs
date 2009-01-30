@@ -2,7 +2,7 @@
 
 namespace TreeCore
 {
-    class NodeDeletedEventArgs : EventArgs
+    public class NodeDeletedEventArgs : EventArgs
     {
         public NodeDeletedEventArgs()
         {
