@@ -19,7 +19,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\bin\debug\TreeCore\</OutputPath>
+    <OutputPath>..\..\bin\Debug\TreeCore\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -44,11 +44,14 @@
     <Compile Include="AbstractNodeList.cs" />
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="ChildNodesDeletedEventArgs.cs" />
+    <Compile Include="ChildNodesSplittedEventArgs.cs" />
     <Compile Include="CleanedUpEventArgs.cs" />
     <Compile Include="Enums.cs" />
+    <Compile Include="IManualCleanedNodeList.cs" />
     <Compile Include="INode.cs" />
     <Compile Include="INodeList.cs" />
     <Compile Include="Delegates.cs" />
+    <Compile Include="LinkedListNode.cs" />
     <Compile Include="Node.cs" />
     <Compile Include="NodeDeletedEventArgs.cs" />
     <Compile Include="NodeList.cs" />
@@ -59,6 +62,8 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="README.txt" />

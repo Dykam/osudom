@@ -10,11 +10,15 @@ namespace TreeCore
         /// <summary>
         /// Is called when this Nodes ChildNodes are deleted.
         /// </summary>
-        event ChildNodesDeletedEventHandler ChildNodesDeleted   ;
+        event ChildNodesDeletedEventHandler ChildNodesDeleted;
         /// <summary>
         /// Is called when this node is splitted from his parents.
         /// </summary>
         event NodeSplittedEventHandler NodeSplitted;
+        /// <summary>
+        /// Is called when all child nodes have been split from their parents, and their only parent lead to this Node.
+        /// </summary>
+        event ChildNodesSplittedEventHandler ChildNodesSplitted;
 
         /// <summary>
         /// Parent Nodes.
@@ -37,6 +41,12 @@ namespace TreeCore
         /// </summary>
         void Delete();
         /// <summary>
+        /// Completely removes all childNodes to a specified depth.
+        /// </summary>
+        /// <param name="depth">The depth the childNodes should be removed.</param>
+        /// <returns>Reached depth.</returns>
+        uint DeleteChildNodes(uint depth);
+        /// <summary>
         /// Removes all references to this Node in Parents, being a new Tree-top afterwards.
         /// </summary>
         /// <remarks>This function does not always have a loop-detection.</remarks>
@@ -46,13 +56,6 @@ namespace TreeCore
         /// </summary>
         /// <param name="depth">The depth for removing references from parents from ChildNodes. Time will increase exponentially.</param>
         /// <returns>Reached depth.</returns>
-        uint Split(uint depth);
-
-        /// <summary>
-        /// Completely removes all childNodes to a specified depth.
-        /// </summary>
-        /// <param name="depth">The depth the childNodes should be removed.</param>
-        /// <returns>Reached depth.</returns>
-        uint DeleteChildNodes(uint depth);
+        uint SplitChildNodes(uint depth);
     }
 }

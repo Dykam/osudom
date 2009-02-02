@@ -143,7 +143,60 @@ namespace TreeCore
 		}
 		#endregion
 
+        #region ChildNodesSplittedEventHandler ChildNodesSplitted
+        /// <summary>
+        /// Is called when all child nodes have been split from their parents, and their only parent lead to this Node.
+        /// </summary>
+        private event ChildNodesSplittedEventHandler childNodesSplitted;
+        /// <summary>
+        /// Lock for ChildNodesSplitted delegate access.
+        /// </summary>
+        private readonly object childNodesSplittedLock = new object();
+        /// <summary>
+        /// Is called when all child nodes have been split from their parents, and their only parent lead to this Node.
+        /// </summary>
+        public event ChildNodesSplittedEventHandler ChildNodesSplitted
+        {
+            add
+            {
+                lock (childNodesSplittedLock)
+                {
+                    childNodesSplitted += value;
+                }
+            }
+            remove
+            {
+                lock (childNodesSplittedLock)
+                {
+                    childNodesSplitted -= value;
+                }
+            }
+        }
+        /// <summary>
+        /// Has to be called when the child nodes have been splitted.
+        /// </summary>
+        /// <param name="e"></param>
+        protected void OnChildNodesSplitted(ChildNodesSplittedEventArgs e)
+        {
+            ChildNodesSplittedEventHandler handler;
+            lock (childNodesSplittedLock)
+            {
+                handler = childNodesSplitted;
+            }
+            if (handler != null)
+            {
+                handler(this, e);
+            }
+        }
+        #endregion
+
+        /// <summary>
+        /// 
+        /// </summary>
         private NodeList parents;
+        /// <summary>
+        /// 
+        /// </summary>
         public INodeList Parents
         {
             get
@@ -151,7 +204,11 @@ namespace TreeCore
                 return parents;
             }
         }
+
         private NodeList nodes;
+        /// <summary>
+        /// 
+        /// </summary>
         public INodeList Nodes
         {
             get 
@@ -160,6 +217,9 @@ namespace TreeCore
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public void Delete()
         {
             while (parents.Length != 0)
@@ -174,77 +234,74 @@ namespace TreeCore
             }
             OnNodeDeleted(new NodeDeletedEventArgs());
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="depth"></param>
+        /// <returns></returns>
+        public uint DeleteChildNodes(uint depth)
+        {
+            uint reachedDepth = 0;
+            while (nodes.Length != 0)
+            {
+                uint localReachedDepth = nodes[0].DeleteChildNodes(depth - 1);
+                if (localReachedDepth > reachedDepth)
+                    reachedDepth = localReachedDepth;
+                nodes[0].Delete();
+            }
+            OnChildNodesDeleted(new ChildNodesDeletedEventArgs(reachedDepth));
+            return ++reachedDepth;
+        }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public void Split()
         {
             throw new NotImplementedException();
-            uint reachedDepth = 0;
-            while(nodes.Length != 0)
+            NodeSplittedEventHandler handler;
+            NodeList nodeList;
+            lock (childNodesSplittedLock)
             {
-                INode childNode = nodes[0];
-                uint localReachedDepth = Node.Split(this);
-                childNode.Parents.Add(this);
-                if (localReachedDepth > reachedDepth)
-                    reachedDepth = localReachedDepth;
+                handler = nodeSplitted;
             }
-            OnNodeSplitted(new NodeSplittedEventArgs(parents, reachedDepth));
+            if (handler != null)
+            {
+                nodeList = new NodeList();
+                nodeList.Add(parents);
+                splitFromParents();
+                OnNodeSplitted(new NodeSplittedEventArgs(parents));
+            }
+            else
+                splitFromParents();
+        }
+        private void splitFromParents()
+        {
+            while (parents.Length != 0)
+            {
+                parents[0].Nodes.Remove(this);
+                parents.Remove(parents[0]);
+            }
         }
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="node"></param>
+        /// <param name="depth"></param>
         /// <returns></returns>
-        private static uint Split(INode node)
-        {
-            uint reachedDepth = 0;
-            while (node.Nodes.Length != 0)
-            {
-                INode childNode = node.Nodes[0];
-                uint localReachedDepth = Node.Split(childNode);
-                childNode.Parents.Add(node);
-                node.Nodes.Add(node);
-                if (localReachedDepth > reachedDepth)
-                    reachedDepth = localReachedDepth;
-            }
-            while (node.Parents.Length != 0)
-            {
-                node.Parents[0].Nodes.Remove(node);
-                node.Parents.Remove(node.Parents[0]);
-            }
-            return ++reachedDepth;
-        }
-        public uint Split(uint depth)
+        public uint SplitChildNodes(uint depth)
         {
             uint reachedDepth = 0;
             while(nodes.Length != 0)
             {
             	INode node = nodes[0];
-            	uint localReachedDepth = node.Split(depth - 1);
+                uint localReachedDepth = node.SplitChildNodes(depth - 1);
+                node.Split();
             	node.Parents.Add(this);
             	nodes.Add(node);
             	if(localReachedDepth > reachedDepth)
             		reachedDepth = localReachedDepth;
             }
-            while(parents.Length != 0)
-            {
-            	parents[0].Nodes.Remove(this);
-            	parents.Remove(parents[0]);
-            }
-            OnNodeSplitted(new NodeSplittedEventArgs(parents, reachedDepth));
-            return ++reachedDepth;
-        }
-
-        public uint DeleteChildNodes(uint depth)
-        {
-            uint reachedDepth = 0;
-            while(nodes.Length != 0)
-            {
-            	uint localReachedDepth = nodes[0].DeleteChildNodes(depth - 1);
-            	if(localReachedDepth > reachedDepth)
-            		reachedDepth = localReachedDepth;
-            	nodes[0].Delete();
-            }
-            OnChildNodesDeleted(new ChildNodesDeletedEventArgs(reachedDepth));
+            OnChildNodesSplitted(new ChildNodesSplittedEventArgs(reachedDepth));
             return ++reachedDepth;
         }
 

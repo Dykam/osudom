@@ -43,11 +43,14 @@
     <Compile Include="AbstractNodeList.cs" />
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="ChildNodesDeletedEventArgs.cs" />
+    <Compile Include="ChildNodesSplittedEventArgs.cs" />
     <Compile Include="CleanedUpEventArgs.cs" />
     <Compile Include="Delegates.cs" />
     <Compile Include="Enums.cs" />
+    <Compile Include="IManualCleanedNodeList.cs" />
     <Compile Include="INode.cs" />
     <Compile Include="INodeList.cs" />
+    <Compile Include="LinkedListNode.cs" />
     <Compile Include="NodeDeletedEventArgs.cs" />
     <Compile Include="NodesAddedEventArgs.cs" />
     <Compile Include="NodesManager.cs" />
@@ -55,5 +58,6 @@
     <Compile Include="NodeList.cs" />
     <Compile Include="NodeSplittedEventArgs.cs" />
     <Compile Include="NodesRemovedEventArgs.cs" />
+    <None Include="README.txt" />
   </ItemGroup>
 </Project>

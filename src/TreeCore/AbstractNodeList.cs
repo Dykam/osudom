@@ -43,10 +43,6 @@ namespace TreeCore
         /// <returns>The Nodes which were in the NodeList.</returns>
         abstract protected INodeList internalRemove(INodeList node);
         /// <summary>
-        /// Checks for and removes doubles.
-        /// </summary>
-        abstract protected void internalCleanUp();
-        /// <summary>
         /// Returns a Node from the specified index.
         /// </summary>
         /// <param name="index">The index to get the Node from.</param>
@@ -63,9 +59,8 @@ namespace TreeCore
         abstract protected uint internalLenght { get; }
         #endregion
 
-
         #region INodeList Members
-                
+        
         #region NodesAddedEventHandler NodesAdded
         /// <summary>
         /// 
@@ -112,54 +107,7 @@ namespace TreeCore
             }
         }
         #endregion
-
-        #region CleanedUpEventHandler CleanedUp
-        /// <summary>
-        /// 
-        /// </summary>
-        private event CleanedUpEventHandler cleanedUp;
-        /// <summary>
-        /// Lock for CleanedUp delegate access.
-        /// </summary>
-        private readonly object cleanedUpLock = new object();
-        /// <summary>
-        /// 
-        /// </summary>
-        public event CleanedUpEventHandler CleanedUp
-        {
-            add
-            {
-                lock (cleanedUpLock)
-                {
-                    cleanedUp += value;
-                }
-            }
-            remove
-            {
-                lock (cleanedUpLock)
-                {
-                    cleanedUp -= value;
-                }
-            }
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="e"></param>
-        protected void OnCleanedUp(CleanedUpEventArgs e)
-        {
-            CleanedUpEventHandler handler;
-            lock (cleanedUpLock)
-            {
-                handler = cleanedUp;
-            }
-            if (handler != null)
-            {
-                handler(this, e);
-            }
-        }
-        #endregion
-
+        
         #region NodesRemovedEventHandler NodesRemoved
         /// <summary>
         /// Is called when this Node is deleted.
@@ -257,12 +205,6 @@ namespace TreeCore
                 OnNodesRemoved(new NodesRemovedEventArgs(wereInList));
             }
             return nodes.Length - wereInList.Length;
-        }
-
-        public void CleanUp()
-        {
-            internalCleanUp();
-            OnCleanedUp(new CleanedUpEventArgs());
         }
 
         public INode this[uint index]

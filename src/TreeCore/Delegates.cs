@@ -41,5 +41,11 @@ namespace TreeCore
     /// <param name="sender"></param>
     /// <param name="e"></param>
     public delegate void NodeSplittedEventHandler(object sender, NodeSplittedEventArgs e);
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    public delegate void ChildNodesSplittedEventHandler(object sender, ChildNodesSplittedEventArgs e);
     #endregion
 }

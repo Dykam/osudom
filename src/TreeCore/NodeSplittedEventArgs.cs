@@ -18,23 +18,11 @@ namespace TreeCore
         /// <summary>
         /// 
         /// </summary>
-        private uint m_reachedRemovedFromParentDepth;
-        /// <summary>
-        /// 
-        /// </summary>
-        public uint ReachedRemovedFromParentDepth
-        {
-            get { return m_reachedRemovedFromParentDepth; }
-        }
-        /// <summary>
-        /// 
-        /// </summary>
         /// <param name="originalParents"></param>
         /// <param name="reachedRemovedFromParentDepth"></param>
-        public NodeSplittedEventArgs(INodeList originalParents, uint reachedRemovedFromParentDepth)
+        public NodeSplittedEventArgs(INodeList originalParents)
         {
             m_originalParents = originalParents;
-            m_reachedRemovedFromParentDepth = reachedRemovedFromParentDepth;
         }
     }
 }
