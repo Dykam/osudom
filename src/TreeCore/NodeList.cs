@@ -318,13 +318,7 @@ namespace TreeCore
         {
             get
             {
-        		LinkedListNode currentLinkedListNode = firstLinkedListNode;
-        		while(index != 0)
-        		{
-        			currentLinkedListNode = firstLinkedListNode.Next;
-        			index--;
-        		}
-        		return currentLinkedListNode.Node;
+                firstLinkedListNode.Lenght;
         	}
         }
 
