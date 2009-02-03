@@ -49,11 +49,6 @@ namespace TreeCore
         /// <returns>A Node from the specified index.</returns>
         abstract protected INode internalGetInode(uint index);
         /// <summary>
-        /// Sets a Node at the specified index.
-        /// </summary>
-        /// <param name="index">The index of the Node to set.</param>
-        abstract protected void internalSetInode(uint index, INode node);
-        /// <summary>
         /// 
         /// </summary>
         abstract protected uint internalLenght { get; }

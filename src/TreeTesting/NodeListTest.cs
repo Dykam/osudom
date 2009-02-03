@@ -1,70 +1,75 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
+/*
+ * Gemaakt met SharpDevelop.
+ * Gebruiker: 8008
+ * Datum: 3-2-2009
+ * Tijd: 10:04
+ * 
+ * Dit sjabloon wijzigen: Extra | Opties |Coderen | Standaard kop bewerken.
+ */
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using NUnit.Framework;
+using NUnit.Framework.SyntaxHelpers;
+using TreeCore;
 
 namespace TreeTesting
 {
-    /// <summary>
-    /// Summary description for NodeListTest
-    /// </summary>
-    [TestClass]
-    public class NodeListTest
-    {
-        public NodeListTest()
-        {
-            //
-            // TODO: Add constructor logic here
-            //
-        }
-
-        private TestContext testContextInstance;
-
-        /// <summary>
-        ///Gets or sets the test context which provides
-        ///information about and functionality for the current test run.
-        ///</summary>
-        public TestContext TestContext
-        {
-            get
-            {
-                return testContextInstance;
-            }
-            set
-            {
-                testContextInstance = value;
-            }
-        }
-
-        #region Additional test attributes
-        //
-        // You can use the following additional attributes as you write your tests:
-        //
-        // Use ClassInitialize to run code before running the first test in the class
-        // [ClassInitialize()]
-        // public static void MyClassInitialize(TestContext testContext) { }
-        //
-        // Use ClassCleanup to run code after all tests in a class have run
-        // [ClassCleanup()]
-        // public static void MyClassCleanup() { }
-        //
-        // Use TestInitialize to run code before running each test 
-        // [TestInitialize()]
-        // public void MyTestInitialize() { }
-        //
-        // Use TestCleanup to run code after each test has run
-        // [TestCleanup()]
-        // public void MyTestCleanup() { }
-        //
-        #endregion
-
-        [TestMethod]
-        public void TestMethod1()
-        {
-            //
-            // TODO: Add test logic	here
-            //
-        }
-    }
+	[TestFixture]
+	public class NodeListTest
+	{
+		[SetUp]
+		public void Init()
+		{
+			
+		}
+		[Test]
+		public void EmptyNodeListTest()
+		{
+			INodeList nodeList = new NodeList();
+			Assert.AreEqual(0, nodeList.Length);
+		}
+		[Test]
+		public void ContructorSingleNodeTest()
+		{
+			INodeList nodeList = new NodeList(new Node());
+			Assert.AreEqual(1, nodeList.Length);
+		}
+		[Test]
+		public void ConstructorMultiNodesTest()
+		{
+			INodeList newNodeList = new NodeList(new Node());
+			newNodeList.Add(new Node());
+			newNodeList.Add(new Node());
+			INode node = new TestClass();
+			newNodeList.Add(node);
+			Assert.AreEqual(4, newNodeList.Length);
+			uint pos = 0;
+			INode foundNode = new Node();
+			while(ReferenceEquals(foundNode, node))
+			{
+				foundNode = newNodeList[pos];
+				pos++;
+			}
+			Assert.AreEqual(newNodeList.Length -1, pos);
+			INodeList nodeList = new NodeList(newNodeList);
+			Assert.AreEqual(4, nodeList.Length);
+		}
+		[Test]
+		public void AddSingleNodeTest()
+		{
+			INodeList nodeList = new NodeList();
+			nodeList.Add(new Node());
+			Assert.AreEqual(1, nodeList.Length);
+		}
+		[Test]
+		public void AddMultiNodesTest()
+		{
+			INodeList nodeList = new NodeList();
+			nodeList.Add(new Node());
+			nodeList.Add(new Node());
+			nodeList.Add(new Node());
+			nodeList.Add(new Node());
+			Assert.AreEqual(4, nodeList.Length);
+		}
+	}
 }

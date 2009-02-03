@@ -216,6 +216,12 @@ namespace TreeCore
                 return nodes;
             }
         }
+        
+        public Node()
+        {
+        	parents = new NodeList();
+        	nodes = new NodeList();
+        }
 
         /// <summary>
         /// 

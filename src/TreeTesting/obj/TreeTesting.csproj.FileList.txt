@@ -1,0 +1,5 @@
+..\..\bin\Debug\TreeTesting\TreeTesting.dll
+..\..\bin\Debug\TreeTesting\TreeTesting.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\TreeTesting.dll
+obj\Debug\TreeTesting.pdb

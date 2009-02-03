@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="D:\Documents\Dev\C#\OSUDOM\OSUDOM.nunit" total="5" failures="0" not-run="0" date="2009-02-03" time="14:49:25">
+  <environment nunit-version="2.4.8.0" clr-version="2.0.50727.832" os-version="Microsoft Windows NT 5.1.2600 Service Pack 3" platform="Win32NT" cwd="D:\Documents\Dev\C#\OSUDOM" machine-name="T326-3658" user="8008" user-domain="ARENTHEEM" />
+  <culture-info current-culture="nl-NL" current-uiculture="nl-NL" />
+  <test-suite name="D:\Documents\Dev\C#\OSUDOM\OSUDOM.nunit" success="True" time="0.312" asserts="0">
+    <results>
+      <test-suite name="D:\Documents\Dev\C#\OSUDOM\bin\Debug\TreeTesting\TreeTesting.dll" success="True" time="0.312" asserts="0">
+        <results>
+          <test-suite name="TreeTesting" success="True" time="0.266" asserts="0">
+            <results>
+              <test-suite name="LinkedListTest" success="True" time="0.109" asserts="0">
+                <results>
+                  <test-case name="TreeTesting.LinkedListTest.MainTest" executed="True" success="True" time="0.016" asserts="4" />
+                </results>
+              </test-suite>
+              <test-suite name="NodeListTest" success="True" time="0.031" asserts="0">
+                <results>
+                  <test-case name="TreeTesting.NodeListTest.AddMultiNodesTest" executed="True" success="True" time="0.016" asserts="1" />
+                  <test-case name="TreeTesting.NodeListTest.AddSingleNodeTest" executed="True" success="True" time="0.000" asserts="1" />
+                  <test-case name="TreeTesting.NodeListTest.ContructorSingleNodeTest" executed="True" success="True" time="0.000" asserts="1" />
+                  <test-case name="TreeTesting.NodeListTest.EmptyNodeListTest" executed="True" success="True" time="0.000" asserts="1" />
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

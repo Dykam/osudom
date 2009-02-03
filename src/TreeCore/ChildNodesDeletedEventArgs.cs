@@ -23,7 +23,7 @@ namespace TreeCore
         /// <param name="reachedDeletedChildNodeDepth"></param>
         public ChildNodesDeletedEventArgs(uint reachedDeletedChildNodeDepth)
         {
-
+        	m_reachedRemovedFromParentDepth = reachedDeletedChildNodeDepth;
         }
     }
 }

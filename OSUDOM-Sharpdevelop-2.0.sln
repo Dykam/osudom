@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeCore-Sharpdevelop-2.0",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeDebug-Sharpdevelop-2.0", "src\TreeDebug\TreeDebug-Sharpdevelop-2.0.csproj", "{9564F718-013E-4C39-A8B7-2DAD6D45C6B9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeTesting", "src\TreeTesting\TreeTesting.csproj", "{B2790C56-6293-489E-A000-59103C4958E1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,5 +36,9 @@ Global
 		{9564F718-013E-4C39-A8B7-2DAD6D45C6B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9564F718-013E-4C39-A8B7-2DAD6D45C6B9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9564F718-013E-4C39-A8B7-2DAD6D45C6B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2790C56-6293-489E-A000-59103C4958E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2790C56-6293-489E-A000-59103C4958E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2790C56-6293-489E-A000-59103C4958E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2790C56-6293-489E-A000-59103C4958E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 EndGlobal

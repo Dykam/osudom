@@ -35,7 +35,8 @@ namespace TreeCore
         /// </summary>
         public NodesAddedEventArgs(INodeList addedNodes, uint firstAddedNodeIndex)
         {
-
+        	m_addedNodes = addedNodes;
+        	m_firstAddedNodeIndex = firstAddedNodeIndex;
         }
     }
 }
