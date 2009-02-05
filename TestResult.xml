@@ -1,25 +1,96 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="D:\Documents\Dev\C#\OSUDOM\OSUDOM.nunit" total="5" failures="0" not-run="0" date="2009-02-03" time="14:49:25">
-  <environment nunit-version="2.4.8.0" clr-version="2.0.50727.832" os-version="Microsoft Windows NT 5.1.2600 Service Pack 3" platform="Win32NT" cwd="D:\Documents\Dev\C#\OSUDOM" machine-name="T326-3658" user="8008" user-domain="ARENTHEEM" />
+<test-results name="L:\Documents\Dev\C#\OSUDOM\OSUDOM.nunit" total="10" failures="10" not-run="0" date="2009-02-05" time="09:37:55">
+  <environment nunit-version="2.4.8.0" clr-version="2.0.50727.3053" os-version="Microsoft Windows NT 5.1.2600 Service Pack 3" platform="Win32NT" cwd="L:\Documents\Dev\C#\OSUDOM" machine-name="MARK-PC" user="Mark" user-domain="MARK-PC" />
   <culture-info current-culture="nl-NL" current-uiculture="nl-NL" />
-  <test-suite name="D:\Documents\Dev\C#\OSUDOM\OSUDOM.nunit" success="True" time="0.312" asserts="0">
+  <test-suite name="L:\Documents\Dev\C#\OSUDOM\OSUDOM.nunit" success="False" time="0.406" asserts="0">
     <results>
-      <test-suite name="D:\Documents\Dev\C#\OSUDOM\bin\Debug\TreeTesting\TreeTesting.dll" success="True" time="0.312" asserts="0">
+      <test-suite name="L:\Documents\Dev\C#\OSUDOM\bin\Debug\TreeTest\TreeTest.exe" success="False" time="0.375" asserts="0">
         <results>
-          <test-suite name="TreeTesting" success="True" time="0.266" asserts="0">
+          <test-suite name="TreeTest" success="False" time="0.359" asserts="0">
             <results>
-              <test-suite name="LinkedListTest" success="True" time="0.109" asserts="0">
+              <test-suite name="LinkedListNodeTest" success="False" time="0.344" asserts="0">
                 <results>
-                  <test-case name="TreeTesting.LinkedListTest.MainTest" executed="True" success="True" time="0.016" asserts="4" />
-                </results>
-              </test-suite>
-              <test-suite name="NodeListTest" success="True" time="0.031" asserts="0">
-                <results>
-                  <test-case name="TreeTesting.NodeListTest.AddMultiNodesTest" executed="True" success="True" time="0.016" asserts="1" />
-                  <test-case name="TreeTesting.NodeListTest.AddSingleNodeTest" executed="True" success="True" time="0.000" asserts="1" />
-                  <test-case name="TreeTesting.NodeListTest.ContructorSingleNodeTest" executed="True" success="True" time="0.000" asserts="1" />
-                  <test-case name="TreeTesting.NodeListTest.EmptyNodeListTest" executed="True" success="True" time="0.000" asserts="1" />
+                  <test-case name="TreeTest.LinkedListNodeTest.TestCreation" executed="True" success="False" time="0.109" asserts="0">
+                    <failure>
+                      <message><![CDATA[System.NotImplementedException : De methode of bewerking is niet geïmplementeerd.]]></message>
+                      <stack-trace><![CDATA[bij TreeCore.LinkedListNode`1.get_Lenght() in d:\Documents\Dev\C#\OSUDOM\src\TreeCore\LinkedListNode.cs:regel 50
+bij TreeTest.LinkedListNodeTest.TestCreation() in d:\Documents\Dev\C#\OSUDOM\src\TreeTest\LinkedListNodeTest.cs:regel 24
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="TreeTest.LinkedListNodeTest.TestHugeMultiCreation" executed="True" success="False" time="0.016" asserts="0">
+                    <failure>
+                      <message><![CDATA[System.NotImplementedException : De methode of bewerking is niet geïmplementeerd.]]></message>
+                      <stack-trace><![CDATA[bij TreeCore.LinkedListNode`1.get_Lenght() in d:\Documents\Dev\C#\OSUDOM\src\TreeCore\LinkedListNode.cs:regel 50
+bij TreeTest.LinkedListNodeTest.TestHugeMultiCreation() in d:\Documents\Dev\C#\OSUDOM\src\TreeTest\LinkedListNodeTest.cs:regel 53
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="TreeTest.LinkedListNodeTest.TestJump" executed="True" success="False" time="0.016" asserts="0">
+                    <failure>
+                      <message><![CDATA[System.NotImplementedException : De methode of bewerking is niet geïmplementeerd.]]></message>
+                      <stack-trace><![CDATA[bij TreeCore.LinkedListNode`1.Jump(Int32 relativePosition) in d:\Documents\Dev\C#\OSUDOM\src\TreeCore\LinkedListNode.cs:regel 25
+bij TreeTest.LinkedListNodeTest.TestJump() in d:\Documents\Dev\C#\OSUDOM\src\TreeTest\LinkedListNodeTest.cs:regel 112
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="TreeTest.LinkedListNodeTest.TestMergeHybrid" executed="True" success="False" time="0.016" asserts="0">
+                    <failure>
+                      <message><![CDATA[System.NotImplementedException : De methode of bewerking is niet geïmplementeerd.]]></message>
+                      <stack-trace><![CDATA[bij TreeCore.LinkedListNode`1.get_Lenght() in d:\Documents\Dev\C#\OSUDOM\src\TreeCore\LinkedListNode.cs:regel 50
+bij TreeTest.LinkedListNodeTest.TestMergeHybrid() in d:\Documents\Dev\C#\OSUDOM\src\TreeTest\LinkedListNodeTest.cs:regel 74
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="TreeTest.LinkedListNodeTest.TestMergeRings" executed="True" success="False" time="0.016" asserts="0">
+                    <failure>
+                      <message><![CDATA[System.NotImplementedException : De methode of bewerking is niet geïmplementeerd.]]></message>
+                      <stack-trace><![CDATA[bij TreeCore.LinkedListNode`1.get_Lenght() in d:\Documents\Dev\C#\OSUDOM\src\TreeCore\LinkedListNode.cs:regel 50
+bij TreeTest.LinkedListNodeTest.TestMergeRings() in d:\Documents\Dev\C#\OSUDOM\src\TreeTest\LinkedListNodeTest.cs:regel 90
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="TreeTest.LinkedListNodeTest.TestMergeSingles" executed="True" success="False" time="0.016" asserts="0">
+                    <failure>
+                      <message><![CDATA[System.NotImplementedException : De methode of bewerking is niet geïmplementeerd.]]></message>
+                      <stack-trace><![CDATA[bij TreeCore.LinkedListNode`1.get_Lenght() in d:\Documents\Dev\C#\OSUDOM\src\TreeCore\LinkedListNode.cs:regel 50
+bij TreeTest.LinkedListNodeTest.TestMergeSingles() in d:\Documents\Dev\C#\OSUDOM\src\TreeTest\LinkedListNodeTest.cs:regel 62
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="TreeTest.LinkedListNodeTest.TestMultiAdd" executed="True" success="False" time="0.016" asserts="0">
+                    <failure>
+                      <message><![CDATA[System.NotImplementedException : De methode of bewerking is niet geïmplementeerd.]]></message>
+                      <stack-trace><![CDATA[bij TreeCore.LinkedListNode`1.get_Lenght() in d:\Documents\Dev\C#\OSUDOM\src\TreeCore\LinkedListNode.cs:regel 50
+bij TreeTest.LinkedListNodeTest.TestMultiAdd() in d:\Documents\Dev\C#\OSUDOM\src\TreeTest\LinkedListNodeTest.cs:regel 43
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="TreeTest.LinkedListNodeTest.TestSingleAdd" executed="True" success="False" time="0.016" asserts="0">
+                    <failure>
+                      <message><![CDATA[System.NotImplementedException : De methode of bewerking is niet geïmplementeerd.]]></message>
+                      <stack-trace><![CDATA[bij TreeCore.LinkedListNode`1.get_Lenght() in d:\Documents\Dev\C#\OSUDOM\src\TreeCore\LinkedListNode.cs:regel 50
+bij TreeTest.LinkedListNodeTest.TestSingleAdd() in d:\Documents\Dev\C#\OSUDOM\src\TreeTest\LinkedListNodeTest.cs:regel 32
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="TreeTest.LinkedListNodeTest.TestSplit" executed="True" success="False" time="0.016" asserts="0">
+                    <failure>
+                      <message><![CDATA[System.NotImplementedException : De methode of bewerking is niet geïmplementeerd.]]></message>
+                      <stack-trace><![CDATA[bij TreeCore.LinkedListNode`1.Split(Int32 portion) in d:\Documents\Dev\C#\OSUDOM\src\TreeCore\LinkedListNode.cs:regel 38
+bij TreeTest.LinkedListNodeTest.TestSplit() in d:\Documents\Dev\C#\OSUDOM\src\TreeTest\LinkedListNodeTest.cs:regel 125
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="TreeTest.LinkedListNodeTest.TestTakeOut" executed="True" success="False" time="0.016" asserts="0">
+                    <failure>
+                      <message><![CDATA[System.NotImplementedException : De methode of bewerking is niet geïmplementeerd.]]></message>
+                      <stack-trace><![CDATA[bij TreeCore.LinkedListNode`1.TakeOut() in d:\Documents\Dev\C#\OSUDOM\src\TreeCore\LinkedListNode.cs:regel 42
+bij TreeTest.LinkedListNodeTest.TestTakeOut() in d:\Documents\Dev\C#\OSUDOM\src\TreeTest\LinkedListNodeTest.cs:regel 100
+]]></stack-trace>
+                    </failure>
+                  </test-case>
                 </results>
               </test-suite>
             </results>

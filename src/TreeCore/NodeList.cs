@@ -2,23 +2,7 @@
 namespace TreeCore
 {
     public class NodeList : INodeList
-    {       	
-        private LinkedListNode firstLinkedListNode;
-        private uint length = 0;
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="node"></param>
-        /// <returns>Returns true if firstLinkedListNode was not null.</returns>
-        private bool firstNode(INode node)
-        {
-        	if(firstLinkedListNode == null)
-        	{
-        		firstLinkedListNode = new LinkedListNode(node);
-        		return true;
-        	}
-        	return false;
-        }
+    {
     	
         #region INodeList Members
         
@@ -147,7 +131,7 @@ namespace TreeCore
         /// </summary>
         public NodeList()
         {
-
+            
         }
         /// <summary>
         /// Adds a single Node into this new NodeList.
@@ -155,9 +139,7 @@ namespace TreeCore
         /// <param name="node">The Node to be added.</param>
         public NodeList(INode node)
         {
-        	if(firstNode(node))
-	        	firstLinkedListNode.Prepend(new LinkedListNode(node));
-        	length++;
+            throw new NotImplementedException();
         }
         /// <summary>
         /// Adds multiple Nodes into this new NodeList.
@@ -165,15 +147,7 @@ namespace TreeCore
         /// <param name="nodes">The Nodes to be added.</param>
         public NodeList(INodeList nodes)
         {
-        	uint i = 0;
-        	length += nodes.Length;
-        	if(firstNode(nodes[0]))
-        		i++;
-        	while(i < nodes.Length)
-        	{
-        		firstLinkedListNode.Prepend(new LinkedListNode(nodes[i]));
-                i++;
-        	}
+            throw new NotImplementedException();
         }
         
         /// <summary>
@@ -182,13 +156,7 @@ namespace TreeCore
         /// <param name="node"></param>
         public void Add(INode node)
         {
-        	length++;
-            if(firstNode(node))
-	        	firstLinkedListNode.Prepend(new LinkedListNode(node));
-            if(NodesAddeddHasCallers)
-            {
-            	OnNodesAdded(new NodesAddedEventArgs(new NodeList(node), Length));
-            }
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -197,22 +165,7 @@ namespace TreeCore
         /// <param name="nodes"></param>
         public void Add(INodeList nodes)
         {
-        	lock(nodes)
-        	{
-        		uint i = 0;
-        		if(firstNode(nodes[0]))
-	        		i++;
-	        	while(i < nodes.Length)
-	        	{
-	        		firstLinkedListNode.Prepend(new LinkedListNode(nodes[i]));
-                    i++;
-	        	}
-	        	if(NodesAddeddHasCallers)
-	            {
-	        		OnNodesAdded(new NodesAddedEventArgs(new NodeList(nodes), Length - nodes.Length));
-	            }
-	        	length += nodes.Length;
-        	}
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -223,34 +176,7 @@ namespace TreeCore
         /// <returns></returns>
         public uint InsertAt(int position, INode node)
         {
-            uint insertedAt = (uint)position % Length;
-            length++;
-        	if(!firstNode(node))
-        	{
-	            LinkedListNode currentLinkedListNode = firstLinkedListNode;
-                if (position > 0)
-	            {
-		            while(position != 0)
-		            {
-		            	currentLinkedListNode = currentLinkedListNode.Next;
-		            	position--;
-		            }
-	            }
-	            else if (position < 0)
-	            {
-	            	while(position != 0)
-		            {
-		            	currentLinkedListNode = currentLinkedListNode.Previous;
-		            	position++;
-		            }
-	            }
-	            currentLinkedListNode.Prepend(new LinkedListNode(node));
-        	}
-        	if(NodesAddeddHasCallers)
-            {
-        		OnNodesAdded(new NodesAddedEventArgs(new NodeList(node), insertedAt));
-            }
-            return insertedAt;
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -262,33 +188,6 @@ namespace TreeCore
         public uint InsertAt(int position, INodeList nodes)
         {
             throw new NotImplementedException();
-            length += nodes.Length;
-            uint insertedAt = (uint)position % Length;
-            LinkedListNode currentLinkedListNode = firstLinkedListNode;
-            if (position > 0)
-            {
-	            while(position != 0)
-	            {
-	            	currentLinkedListNode = currentLinkedListNode.Next;
-	            	position--;
-	            }
-            }
-            else if (position < 0)
-            {
-            	while(position != 0)
-	            {
-	            	currentLinkedListNode = currentLinkedListNode.Previous;
-	            	position++;
-	            }
-            }
-            for(uint i = 0; i < nodes.Length; i++)
-        	{
-        		firstLinkedListNode.Prepend(new LinkedListNode(nodes[i]));
-        	}
-        	if(NodesAddeddHasCallers)
-            {
-        		OnNodesAdded(new NodesAddedEventArgs(new NodeList(nodes), insertedAt));
-            }
         }
 
         /// <summary>
@@ -316,9 +215,10 @@ namespace TreeCore
         /// </summary>
         public INode this[uint index]
         {
-            get
+            
+        	get
             {
-                firstLinkedListNode.Lenght;
+                throw new NotImplementedException();
         	}
         }
 
@@ -327,7 +227,10 @@ namespace TreeCore
         /// </summary>
         public uint Length
         {
-            get { return length; }
+            get
+            {
+        		throw new NotImplementedException();
+        	}
         }
 
         #endregion

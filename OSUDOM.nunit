@@ -1,7 +1,7 @@
 ﻿<NUnitProject>
   <Settings activeconfig="Debug" />
   <Config name="Debug" binpathtype="Auto">
-    <assembly path="bin\Debug\TreeTesting\TreeTesting.dll" />
+    <assembly path="bin\Debug\TreeTest\TreeTest.exe" />
   </Config>
   <Config name="Release" binpathtype="Auto">
     <assembly path="bin\Release\TreeTesting\TreeTesting.dll" />
