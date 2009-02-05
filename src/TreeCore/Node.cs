@@ -264,7 +264,6 @@ namespace TreeCore
         /// </summary>
         public void Split()
         {
-            throw new NotImplementedException();
             NodeSplittedEventHandler handler;
             NodeList nodeList;
             lock (childNodesSplittedLock)

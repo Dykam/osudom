@@ -9,6 +9,18 @@ namespace TreeCore
         /// <summary>
         /// 
         /// </summary>
+        private T m_value;
+        /// <summary>
+        /// 
+        /// </summary>
+        public T Value
+        {
+            get { return m_value; }
+            set { m_value = value; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
         private LinkedListNode<T> next, previous;
         /// <summary>
         /// 
@@ -18,6 +30,7 @@ namespace TreeCore
         {
             next = this;
             previous = this;
+            m_value = value;
         }
         /// <summary>
         /// 
@@ -25,8 +38,7 @@ namespace TreeCore
         /// <param name="linkedListNode">The node to connect to.</param>
         public void Append(LinkedListNode<T> linkedListNode)
         {
-            throw new NotImplementedException();
-
+            Link(linkedListNode);
         }
         public LinkedListNode<T> Jump(int offset)
         {
@@ -52,7 +64,7 @@ namespace TreeCore
         /// <returns>The old link.</returns>
         public LinkedListNode<T> Link(LinkedListNode<T> linkedListNode)
         {
-            LinkedListNode<T> result = this.next;
+            LinkedListNode<T> result = next;
             linkedListNode.previous.next = next;
             next.previous = linkedListNode.previous;
             linkedListNode.previous = this;
@@ -61,7 +73,7 @@ namespace TreeCore
         }
         public void Prepend(LinkedListNode<T> linkedListNode)
         {
-            throw new NotImplementedException();
+            linkedListNode.Link(this);
         }
         /// <summary>
         /// Splits the LinkedList in two.
@@ -70,14 +82,40 @@ namespace TreeCore
         /// <returns></returns>
         public LinkedListNode<T> Split(int offset)
         {
-            throw new NotImplementedException();
+            LinkedListNode<T> splitoffset = this;
+            if (offset > 0)
+            {
+                while (offset != 0)
+                {
+                    splitoffset = splitoffset.next;
+                    offset--;
+                }
+                return splitoffset.Link(this);
+            }
+            else if (offset < 0)
+            {
+                while (offset != 0)
+                {
+                    splitoffset = splitoffset.previous;
+                    offset++;
+                }
+                return Link(splitoffset);
+            }
+            return Link(this);
         }
 
         public uint Lenght
         {
             get
             {
-                throw new NotImplementedException();
+                uint lenght = 1;
+                LinkedListNode<T> current = next;
+                while (current != this)
+                {
+                    current = current.next;
+                    lenght++;
+                }
+                return lenght;
             }
         }
         /// <summary>
@@ -99,6 +137,11 @@ namespace TreeCore
             {
                 return previous;
             }
+        }
+
+        public override string ToString()
+        {
+            return m_value.ToString();
         }
     }
 }
