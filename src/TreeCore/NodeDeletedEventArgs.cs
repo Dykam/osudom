@@ -1,12 +1,12 @@
 ﻿using System;
-
 namespace TreeCore
 {
-    public class NodeDeletedEventArgs : EventArgs
-    {
-        public NodeDeletedEventArgs()
-        {
+	[Serializable]
+	public class NodeDeletedEventArgs : EventArgs
+	{
+		public NodeDeletedEventArgs()
+		{
 
-        }
-    }
+		}
+	}
 }

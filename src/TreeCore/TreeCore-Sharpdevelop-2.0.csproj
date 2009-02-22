@@ -52,19 +52,25 @@
     <Compile Include="ChildNodesDeletedEventArgs.cs" />
     <Compile Include="ChildNodesSplittedEventArgs.cs" />
     <Compile Include="CleanedUpEventArgs.cs" />
+    <Compile Include="Debug\LinkedListNodeTest.cs" />
+    <Compile Include="Debug\LinkedNodeListTest.cs" />
     <Compile Include="Delegates.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="IManualCleanedNodeList.cs" />
     <Compile Include="INode.cs" />
     <Compile Include="INodeList.cs" />
     <Compile Include="LinkedListNode.cs" />
+    <Compile Include="LinkedNodeList.cs" />
     <Compile Include="NodeDeletedEventArgs.cs" />
     <Compile Include="NodesAddedEventArgs.cs" />
     <Compile Include="NodesManager.cs" />
     <Compile Include="Node.cs" />
-    <Compile Include="NodeList.cs" />
     <Compile Include="NodeSplittedEventArgs.cs" />
     <Compile Include="NodesRemovedEventArgs.cs" />
+    <Compile Include="ThreadSafeLinkedNodeList.cs" />
     <None Include="README.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Debug" />
   </ItemGroup>
 </Project>

@@ -1,29 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace TreeCore
 {
-    public class ChildNodesDeletedEventArgs : EventArgs
-    {
-        /// <summary>
-        /// 
-        /// </summary>
-        private uint m_reachedRemovedFromParentDepth;
-        /// <summary>
-        /// 
-        /// </summary>
-        public uint ReachedRemovedFromParentDepth
-        {
-            get { return m_reachedRemovedFromParentDepth; }
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="reachedDeletedChildNodeDepth"></param>
-        public ChildNodesDeletedEventArgs(uint reachedDeletedChildNodeDepth)
-        {
-        	m_reachedRemovedFromParentDepth = reachedDeletedChildNodeDepth;
-        }
-    }
+	[Serializable]
+	public class ChildNodesDeletedEventArgs : EventArgs
+	{
+		/// <summary>
+		/// 
+		/// </summary>
+		private int m_reachedRemovedFromParentDepth;
+		/// <summary>
+		/// 
+		/// </summary>
+		public virtual int ReachedRemovedFromParentDepth
+		{
+			get { return m_reachedRemovedFromParentDepth; }
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="reachedDeletedChildNodeDepth"></param>
+		public ChildNodesDeletedEventArgs(int reachedDeletedChildNodeDepth)
+		{
+			m_reachedRemovedFromParentDepth = reachedDeletedChildNodeDepth;
+		}
+	}
 }

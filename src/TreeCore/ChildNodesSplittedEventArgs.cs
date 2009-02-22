@@ -1,25 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace TreeCore
 {
-    public class ChildNodesSplittedEventArgs : EventArgs
-    {
-        /// <summary>
-        /// 
-        /// </summary>
-        private uint m_reachedRemovedFromParentDepth;
-        /// <summary>
-        /// 
-        /// </summary>
-        public uint ReachedRemovedFromParentDepth
-        {
-            get { return m_reachedRemovedFromParentDepth; }
-        }
-        public ChildNodesSplittedEventArgs(uint reachedRemovedFromParentDepth)
-        {
-            m_reachedRemovedFromParentDepth = reachedRemovedFromParentDepth;
-        }
-    }
+	[Serializable]
+	public class ChildNodesSplittedEventArgs : EventArgs
+	{
+		/// <summary>
+		/// 
+		/// </summary>
+		private int m_reachedRemovedFromParentDepth;
+		/// <summary>
+		/// 
+		/// </summary>
+		public virtual int ReachedRemovedFromParentDepth
+		{
+			get { return m_reachedRemovedFromParentDepth; }
+		}
+		public ChildNodesSplittedEventArgs(int reachedRemovedFromParentDepth)
+		{
+			m_reachedRemovedFromParentDepth = reachedRemovedFromParentDepth;
+		}
+	}
 }
