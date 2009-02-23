@@ -2,7 +2,8 @@
 using System;
 namespace TreeCore
 {
-	[Serializable]
+    [Serializable]
+    [CLSCompliantAttribute(true)]
 	internal class ThreadSafeLinkedNodeList : INodeList, IAsyncResult
 	{
 		public ThreadSafeLinkedNodeList()

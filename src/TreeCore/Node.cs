@@ -1,7 +1,11 @@
 ﻿using System;
 namespace TreeCore
 {
-	[Serializable]
+    /// <summary>
+    /// The main implementation of the INode. Used internally and for testing.
+    /// A good INode to build your stuff on top of it.
+    /// </summary>
+	[Serializable][CLSCompliantAttribute(true)]
 	public class Node : INode
 	{
 		#region INode Members
@@ -191,13 +195,13 @@ namespace TreeCore
 		}
 		#endregion
 
-		/// <summary>
-		/// 
-		/// </summary>
+        /// <summary>
+        /// Parent Nodes.
+        /// </summary>
 		private LinkedNodeList parents;
-		/// <summary>
-		/// 
-		/// </summary>
+        /// <summary>
+        /// Parent Nodes.
+        /// </summary>
 		public virtual INodeList Parents
 		{
 			get
@@ -206,10 +210,13 @@ namespace TreeCore
 			}
 		}
 
+        /// <summary>
+        /// Child Nodes.
+        /// </summary>
 		private LinkedNodeList nodes;
-		/// <summary>
-		/// 
-		/// </summary>
+        /// <summary>
+        /// Child Nodes.
+        /// </summary>
 		public virtual INodeList Nodes
 		{
 			get
@@ -218,6 +225,9 @@ namespace TreeCore
 			}
 		}
 		
+        /// <summary>
+        /// Default contructor for Node.
+        /// </summary>
 		public Node()
 		{
 			parents = new LinkedNodeList();
@@ -225,7 +235,7 @@ namespace TreeCore
 		}
 
 		/// <summary>
-		/// 
+        /// Lets a Node to be garbage collected by removing all references to this Node.
 		/// </summary>
 		public virtual void Delete()
 		{
@@ -241,11 +251,11 @@ namespace TreeCore
 			}
 			OnNodeDeleted(new NodeDeletedEventArgs());
 		}
-		/// <summary>
-		/// 
-		/// </summary>
-		/// <param name="depth"></param>
-		/// <returns></returns>
+        /// <summary>
+        /// Completely removes all childNodes to a specified depth.
+        /// </summary>
+        /// <param name="depth">The depth the childNodes should be removed.</param>
+        /// <returns>Reached depth.</returns>
 		public virtual int DeleteChildNodes(int depth)
 		{
 			int reachedDepth = 0;
@@ -260,10 +270,11 @@ namespace TreeCore
 			return ++reachedDepth;
 		}
 
-		/// <summary>
-		/// 
-		/// </summary>
-		public virtual void Split()
+        /// <summary>
+        /// Removes all references to this Node in Parents, being a new Tree-top afterwards.
+        /// </summary>
+        /// <remarks>This function does not always have a loop-detection.</remarks>
+        public virtual void Split()
 		{
 			NodeSplittedEventHandler handler;
 			LinkedNodeList nodeList;
@@ -288,13 +299,13 @@ namespace TreeCore
 				parents[0].Nodes.Remove(this);
 				parents.Remove(parents[0]);
 			}
-		}
-		/// <summary>
-		/// 
-		/// </summary>
-		/// <param name="depth"></param>
-		/// <returns></returns>
-		public virtual int SplitChildNodes(int depth)
+        }
+        /// <summary>
+        /// Removes all references to this Node in Parents, being a new Tree-top afterwards.
+        /// </summary>
+        /// <param name="depth">The depth for removing references from parents from ChildNodes. Time will increase exponentially.</param>
+        /// <returns>Reached depth.</returns>
+        public virtual int SplitChildNodes(int depth)
 		{
 			int reachedDepth = 0;
 			while(nodes.Length != 0)

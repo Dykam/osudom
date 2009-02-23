@@ -1,7 +1,8 @@
 using System;
 namespace TreeCore
 {
-	[Serializable]
+    [Serializable]
+    [CLSCompliantAttribute(true)]
 	public enum NodeListType : byte
 	{
 		ChildNodes = 0x000001,

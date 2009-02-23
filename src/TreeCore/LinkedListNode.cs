@@ -1,7 +1,7 @@
 ﻿using System;
 namespace TreeCore
 {
-	[Serializable]
+	[Serializable][CLSCompliantAttribute(true)]
 	internal class LinkedListNode<T>
 	{
 		/// <summary>

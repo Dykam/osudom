@@ -7,21 +7,21 @@ namespace TreeCore
 	/// </summary>
 	/// <param name="sender"></param>
 	/// <param name="e"></param>
-	[Serializable]
+	[Serializable][CLSCompliantAttribute(true)]
 	public delegate void NodesAddedEventHandler(object sender, NodesAddedEventArgs e);
 	/// <summary>
 	/// 
 	/// </summary>
 	/// <param name="sender"></param>
 	/// <param name="e"></param>
-	[Serializable]
+	[Serializable][CLSCompliantAttribute(true)]
 	public delegate void CleanedUpEventHandler(object sender, CleanedUpEventArgs e);
 	/// <summary>
 	/// 
 	/// </summary>
 	/// <param name="sender"></param>
 	/// <param name="e"></param>
-	[Serializable]
+	[Serializable][CLSCompliantAttribute(true)]
 	public delegate void NodesRemovedEventHandler(object sender, NodesRemovedEventArgs e);
 	#endregion
 	

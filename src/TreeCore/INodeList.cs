@@ -1,7 +1,11 @@
 ﻿using System;
 namespace TreeCore
 {
-	public interface INodeList // Done
+    /// <summary>
+    /// 
+    /// </summary>
+    [CLSCompliant(true)]
+	public interface INodeList// Done
 	{
 		/// <summary>
 		/// Is called when Nodes are added tho this NodeList
@@ -39,7 +43,7 @@ namespace TreeCore
 		/// Inserts nodes at a given position.
 		/// </summary>
 		/// <param name="position">Position to insert, negative value to count from the end. If position is bigger then Length , the Node is added to the end. Position is 0-indexed.</param>
-		/// <param name="nodeList">The NodeList to insert.</param>
+		/// <param name="nodes">The NodeList to insert.</param>
 		/// <returns>0-indexed position of the first Node added from nodes.</returns>
 		int InsertAt(int position, INodeList nodes);
 		/// <summary>

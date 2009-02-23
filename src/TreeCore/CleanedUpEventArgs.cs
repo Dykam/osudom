@@ -1,7 +1,7 @@
 ﻿using System;
 namespace TreeCore
 {
-	[Serializable]
+	[Serializable][CLSCompliantAttribute(true)]
 	public class CleanedUpEventArgs : EventArgs
 	{
 		public CleanedUpEventArgs()
