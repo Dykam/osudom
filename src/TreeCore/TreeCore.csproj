@@ -64,6 +64,7 @@
     <Compile Include="CleanedUpEventArgs.cs" />
     <Compile Include="Debug\LinkedNodeListTest.cs" />
     <Compile Include="Debug\NodeListTest.cs" />
+    <Compile Include="Debug\NumberedNode.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="IManualCleanedNodeList.cs" />
     <Compile Include="INode.cs" />
@@ -89,10 +90,9 @@
     <Content Include="README.txt" />
   </ItemGroup>
   <ItemGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <Reference Include="nunit.framework, Version=2.4.8.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="nunit.framework">
       <HintPath>..\..\..\..\..\..\PortableApps\NUnit\bin\net-2.0\framework\nunit.framework.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
   </ItemGroup>
   <ItemGroup>

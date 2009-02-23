@@ -68,7 +68,7 @@ namespace TreeCore
 		}
 
 		/// <summary>
-		/// 
+		/// The lenght of the NodeList
 		/// </summary>
 		int Length
 		{
