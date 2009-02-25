@@ -3,16 +3,13 @@ using System;
 namespace TreeCore
 {
     /// <summary>
-    /// 
+    /// Most internals are the same as the LinkedNodeList, except that this node caches some actions, and by this, it will respond way faster for a little memory-cost.
     /// </summary>
     [Serializable]
     [CLSCompliantAttribute(true)]
-	internal class ThreadSafeLinkedNodeList : INodeList, IAsyncResult
+	internal class CachedLinkedNodeList : INodeList, IAsyncResult
 	{
-        /// <summary>
-        /// 
-        /// </summary>
-		public ThreadSafeLinkedNodeList()
+        public CachedLinkedNodeList()
 		{
 			throw new NotImplementedException();
 		}

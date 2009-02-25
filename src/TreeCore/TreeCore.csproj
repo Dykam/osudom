@@ -62,6 +62,7 @@
     <Compile Include="ChildNodesDeletedEventArgs.cs" />
     <Compile Include="ChildNodesSplittedEventArgs.cs" />
     <Compile Include="CleanedUpEventArgs.cs" />
+    <Compile Include="CachedLinkedNodeList.cs" />
     <Compile Include="Debug\LinkedNodeListTest.cs" />
     <Compile Include="Debug\NodeListTest.cs" />
     <Compile Include="Debug\NumberedNode.cs" />
