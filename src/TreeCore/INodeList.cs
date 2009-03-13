@@ -5,7 +5,8 @@ namespace TreeCore
     /// 
     /// </summary>
     [CLSCompliant(true)]
-	public interface INodeList// Done
+	public interface INodeList : System.Collections.IEnumerable, System.Collections.Generic.IEnumerable<INode>
+        // Done
 	{
 		/// <summary>
 		/// Is called when Nodes are added tho this NodeList
@@ -62,10 +63,10 @@ namespace TreeCore
 		int Remove(INodeList nodes);
 
 		/// <summary>
-		/// Returns a Node from the specified index.
+		/// The Node at the specified index.
 		/// </summary>
 		/// <param name="index">The index to get the Node from.</param>
-		/// <returns>A Node from the specified index.</returns>
+		/// <returns>The Node at the specified index.</returns>
 		INode this[int index]
 		{
 			get;

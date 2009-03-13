@@ -1,10 +1,14 @@
 ﻿using System;
 namespace TreeCore
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [Serializable]
     [CLSCompliantAttribute(true)]
     public class LinkedNodeList : INodeList
     {
+        #region Nonstatic
         private LinkedListNode<INode> firstNode;
 
         private bool initFirst(INode node)
@@ -21,15 +25,15 @@ namespace TreeCore
 
         #region NodesAddedEventHandler NodesAdded
         /// <summary>
-        /// 
+        /// Is called when Nodes are added tho this NodeList
         /// </summary>
         private event NodesAddedEventHandler nodesAdded;
         /// <summary>
-        /// 
+        /// Lock for NodeAdded delegate access.
         /// </summary>
         private readonly object nodesAddedLock = new object();
         /// <summary>
-        /// 
+        /// Is called when Nodes are added tho this NodeList
         /// </summary>
         public virtual event NodesAddedEventHandler NodesAdded
         {
@@ -65,7 +69,7 @@ namespace TreeCore
             }
         }
         /// <summary>
-        /// 
+        /// Returns true if the NodesAdded delegate contains listeners, else false.
         /// </summary>
         protected bool NodesAddeddHasCallers
         {
@@ -125,7 +129,7 @@ namespace TreeCore
             }
         }
         /// <summary>
-        /// 
+        /// Returns true if the NodesRemoved delegate contains listeners, else false.
         /// </summary>
         protected bool NodesRemovedHasCallers
         {
@@ -147,7 +151,7 @@ namespace TreeCore
 
         }
         /// <summary>
-        /// Adds a single Node into this new NodeList.
+        /// Constructs a NodeList and adds a single Node into this new NodeList.
         /// </summary>
         /// <param name="node">The Node to be added.</param>
         public LinkedNodeList(INode node)
@@ -155,7 +159,7 @@ namespace TreeCore
             firstNode = new LinkedListNode<INode>(node);
         }
         /// <summary>
-        /// Adds multiple Nodes into this new NodeList.
+        /// Constructs a NodeList and adds multiple Nodes into this new NodeList.
         /// </summary>
         /// <param name="nodes">The Nodes to be added.</param>
         public LinkedNodeList(INodeList nodes)
@@ -168,9 +172,9 @@ namespace TreeCore
         }
 
         /// <summary>
-        /// 
+        /// Adds a single Node into this NodeList.
         /// </summary>
-        /// <param name="node"></param>
+        /// <param name="node">The Node to be added.</param>
         public virtual void Add(INode node)
         {
             if (initFirst(node))
@@ -180,9 +184,9 @@ namespace TreeCore
         }
 
         /// <summary>
-        /// 
+        /// Adds multiple Nodes into this NodeList.
         /// </summary>
-        /// <param name="nodes"></param>
+        /// <param name="nodes">The Nodes to be added.</param>
         public virtual void Add(INodeList nodes)
         {
             if (initFirst(nodes[0]))
@@ -196,11 +200,34 @@ namespace TreeCore
         }
 
         /// <summary>
-        /// 
+        /// Checks if a Node exists in the NodeList
         /// </summary>
-        /// <param name="position"></param>
-        /// <param name="node"></param>
-        /// <returns></returns>
+        /// <param name="node">The Node to check for.</param>
+        /// <returns>True if the Node does exist in the NodeList.</returns>
+        public virtual bool Contains(INode node)
+        {
+#if THREADSAFE
+			int i = 0;
+			while(this.Length - i >= 0)
+			{
+				if (this[nodes.Length - i] == node)
+					return true;
+			}
+			return false;
+#else
+            for (int i = 0; i < this.Length; i++)
+                if (this[i] == node)
+                    return true;
+            return false;
+#endif
+        }
+
+        /// <summary>
+        /// Inserts a node at a given position in targetList.
+        /// </summary>
+        /// <param name="position">Position to insert, negative value to count from the end. If position is bigger then Length, the Node is added to the end. Position is 0-indexed.</param>
+        /// <param name="node">Node to insert.</param>
+        /// <returns>0-indexed position the Node is added.</returns>
         public virtual int InsertAt(int position, INode node)
         {
             if (initFirst(node))
@@ -225,11 +252,11 @@ namespace TreeCore
         }
 
         /// <summary>
-        /// 
+        /// Inserts nodes at a given position.
         /// </summary>
-        /// <param name="position"></param>
-        /// <param name="nodes"></param>
-        /// <returns></returns>
+        /// <param name="position">Position to insert, negative value to count from the end. If position is bigger then Length , the Node is added to the end. Position is 0-indexed.</param>
+        /// <param name="nodes">The NodeList to insert.</param>
+        /// <returns>0-indexed position of the first Node added from nodes.</returns>
         public virtual int InsertAt(int position, INodeList nodes)
         {
             if (initFirst(nodes[0]))
@@ -253,10 +280,10 @@ namespace TreeCore
                 }
                 else
                 {
-                    LinkedListNode<INode> nextNode = firstNode[position - 1];
-                    for (int i = nodes.Length - 1; i >= 0; --i)
+                    LinkedListNode<INode> backNode = firstNode[position];
+                    for (int i = 0; i < nodes.Length; ++i)
                     {
-                        firstNode[position].Append(nodes[i]);
+                        backNode.Prepend(nodes[i]);
                     }
                     return position;
                 }
@@ -269,10 +296,11 @@ namespace TreeCore
         }
 
         /// <summary>
-        /// 
+        /// Remove a single Node from this NodeList.
         /// </summary>
-        /// <param name="node"></param>
-        /// <returns></returns>
+        /// <remarks>This will not delete the Node!</remarks>
+        /// <param name="node">The Node to remove.</param>
+        /// <returns>False if the Node was not in this NodeList.</returns>
         public virtual bool Remove(INode node)
         {
             bool didExcist = false;
@@ -295,10 +323,11 @@ namespace TreeCore
         }
 
         /// <summary>
-        /// 
+        /// Remove multiple Nodes from this NodeList.
         /// </summary>
-        /// <param name="nodes"></param>
-        /// <returns></returns>
+        /// <remarks>This will not delete the Nodes!</remarks>
+        /// <param name="nodes">The Nodes to remove.</param>
+        /// <returns>The number of Nodes which where in the NodeList.</returns>
         public virtual int Remove(INodeList nodes)
         {
             int didExcist = 0;
@@ -319,28 +348,7 @@ namespace TreeCore
                 didExcist++;
             return didExcist;
         }
-        /// <summary>
-        /// Checks if a Node exists in the NodeList
-        /// </summary>
-        /// <param name="node">The Node to check for.</param>
-        /// <returns>True if the Node does exist in the NodeList.</returns>
-        public virtual bool Contains(INode node)
-        {
-#if THREADSAFE
-			int i = 0;
-			while(this.Length - i >= 0)
-			{
-				if (this[nodes.Length - i] == node)
-					return true;
-			}
-			return false;
-#else
-            for (int i = 0; i < this.Length; i++)
-                if (this[i] == node)
-                    return true;
-            return false;
-#endif
-        }
+        
         /// <summary>
         /// 
         /// </summary>
@@ -348,7 +356,6 @@ namespace TreeCore
         /// <returns></returns>
         private bool removeFirst(INode node)
         {
-
             if (firstNode.Value == node)
             {
                 firstNode = firstNode.TakeOut();
@@ -356,9 +363,14 @@ namespace TreeCore
             }
             return false;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="nodes"></param>
+        /// <returns></returns>
         private bool removeFirst(INodeList nodes)
         {
-
             if (nodes.Contains(firstNode.Value))
             {
                 firstNode = firstNode.TakeOut();
@@ -368,11 +380,12 @@ namespace TreeCore
         }
 
         /// <summary>
-        /// 
+        /// The Node at the specified index.
         /// </summary>
+        /// <param name="index">The index to get the Node from.</param>
+        /// <returns>The Node at the specified index.</returns>
         public virtual INode this[int index]
         {
-
             get
             {
                 return firstNode.Jump(unchecked((int)index)).Value;
@@ -380,8 +393,8 @@ namespace TreeCore
         }
 
         /// <summary>
-        /// 
-        /// </summary>
+		/// The lenght of the NodeList
+		/// </summary>
         public virtual int Length
         {
             get
@@ -390,6 +403,58 @@ namespace TreeCore
             }
         }
 
+        #endregion
+
+        #region IEnumerable Members
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public System.Collections.IEnumerator GetEnumerator()
+        {
+            yield return firstNode.Value;
+            LinkedListNode<INode> currentNode = firstNode.Next;
+            while (currentNode != firstNode)
+            {
+                yield return currentNode.Value;
+                currentNode = currentNode.Next;
+            }
+        }
+
+        #endregion
+
+        #region IEnumerable<INode> Members
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        System.Collections.Generic.IEnumerator<INode> System.Collections.Generic.IEnumerable<INode>.GetEnumerator()
+        {
+            yield return firstNode.Value;
+            LinkedListNode<INode> currentNode = firstNode.Next;
+            while (currentNode != firstNode)
+            {
+                yield return currentNode.Value;
+                currentNode = currentNode.Next;
+            }
+        }
+
+        #endregion
+
+        #endregion
+
+        #region Static
+        #region Implicit conversion operators
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static explicit operator LinkedNodeList(INode[] value)
+        {
+            return new LinkedNodeList();
+        }
+        #endregion
         #endregion
     }
 }

@@ -93,6 +93,24 @@ namespace TreeCore
 		}
 
 		#endregion
-	}
+
+        #region IEnumerable Members
+
+        public System.Collections.IEnumerator GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
+
+        #region IEnumerable<INode> Members
+
+        System.Collections.Generic.IEnumerator<INode> System.Collections.Generic.IEnumerable<INode>.GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
+    }
 }
 #endif

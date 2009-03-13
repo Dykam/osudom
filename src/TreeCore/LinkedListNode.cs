@@ -2,7 +2,7 @@
 namespace TreeCore
 {
     [Serializable]
-    [CLSCompliantAttribute(true)]
+    //[CLSCompliantAttribute(true)]
     internal class LinkedListNode<T>
     {
         /// <summary>

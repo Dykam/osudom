@@ -1,12 +1,13 @@
-﻿using System;
+using System;
 namespace TreeCore
 {
-	[Serializable][CLSCompliantAttribute(true)]
-	public class NodeDeletedEventArgs : EventArgs
-	{
-		public NodeDeletedEventArgs()
-		{
-
-		}
-	}
+    /// <summary>
+    /// 
+    /// </summary>
+    [Serializable]
+    [CLSCompliantAttribute(true)]
+    public class NodeDeletedEventArgs : EventArgs
+    {
+        
+    }
 }
