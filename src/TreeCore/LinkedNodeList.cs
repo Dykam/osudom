@@ -216,8 +216,12 @@ namespace TreeCore
 			return false;
 #else
             for (int i = 0; i < this.Length; i++)
+            {
                 if (this[i] == node)
+                {
                     return true;
+                }
+            }
             return false;
 #endif
         }
@@ -258,21 +262,24 @@ namespace TreeCore
         /// <param name="nodes">The NodeList to insert.</param>
         /// <returns>0-indexed position of the first Node added from nodes.</returns>
         public virtual int InsertAt(int position, INodeList nodes)
-        {
+        {            
+            int length = nodes.Length;
             if (initFirst(nodes[0]))
             {
                 if (position == 0)
                 {
-                    firstNode.Prepend(nodes[0]);
-                    firstNode = firstNode.Previous;
-                    for (int i = 1; i < nodes.Length; ++i)
+                    Console.WriteLine("\"\"{0}", firstNode);
+                    for (int i = length - 1; i >= 0; i--)
                     {
-                        firstNode.Append(nodes[i]);
+                        Console.WriteLine("|\"{0}", nodes[i]);
+                        firstNode.Prepend(nodes[i]);
+                        firstNode = firstNode.Previous;
                     }
+                    return 0;
                 }
-                else if (position > firstNode.Length)
+                else if (position >= firstNode.Length)
                 {
-                    for (int i = nodes.Length - 1; i >= 0; --i)
+                    for (int i = 0; i < length; i++ )
                     {
                         firstNode.Prepend(nodes[i]);
                     }
@@ -281,14 +288,14 @@ namespace TreeCore
                 else
                 {
                     LinkedListNode<INode> backNode = firstNode[position];
-                    for (int i = 0; i < nodes.Length; ++i)
+                    for (int i = 0; i < length; i++)
                     {
                         backNode.Prepend(nodes[i]);
                     }
                     return position;
                 }
             }
-            for (int i = 1; i < nodes.Length; ++i)
+            for (int i = 1; i < nodes.Length; i++)
             {
                 firstNode.Append(nodes[i]);
             }
@@ -452,7 +459,12 @@ namespace TreeCore
         /// <returns></returns>
         public static explicit operator LinkedNodeList(INode[] value)
         {
-            return new LinkedNodeList();
+            LinkedNodeList nodeList = new LinkedNodeList();
+            for (int i = 0; i < value.Length; i++)
+            {
+                nodeList.Add(value[i]);
+            }
+            return nodeList;
         }
         #endregion
         #endregion
