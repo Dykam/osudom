@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="true">
+  <TopNode>[0-1000]L:\Documents\Dev\C#\OSUDOM\OSUDOM.nunit</TopNode>
+  <SelectedNode>[0-1001]TreeCore.Debug.NodeListTest&lt;NodeList&gt;</SelectedNode>
+  <SelectedCategories>Performance</SelectedCategories>
+  <ExcludeCategories>true</ExcludeCategories>
+  <Nodes>
+    <Node UniqueName="[0-1000]L:\Documents\Dev\C#\OSUDOM\OSUDOM.nunit" Expanded="true">
+      <Nodes>
+        <Node UniqueName="[0-1030]L:\Documents\Dev\C#\OSUDOM\bin\Debug\TreeCore\TreeCore.dll" Expanded="true">
+          <Nodes>
+            <Node UniqueName="[0-1031]TreeCore" Expanded="true">
+              <Nodes>
+                <Node UniqueName="[0-1032]TreeCore.Debug" Expanded="true">
+                  <Nodes>
+                    <Node UniqueName="[0-1013]TreeCore.Debug.LinkedListNodeTest">
+                      <Nodes>
+                        <Node UniqueName="[0-1014]TreeCore.Debug.LinkedListNodeTest.TestCreation" />
+                        <Node UniqueName="[0-1017]TreeCore.Debug.LinkedListNodeTest.TestHugeMultiCreation" />
+                        <Node UniqueName="[0-1021]TreeCore.Debug.LinkedListNodeTest.TestJump" />
+                        <Node UniqueName="[0-1019]TreeCore.Debug.LinkedListNodeTest.TestMergeHybrid" />
+                        <Node UniqueName="[0-1020]TreeCore.Debug.LinkedListNodeTest.TestMergeRings" />
+                        <Node UniqueName="[0-1018]TreeCore.Debug.LinkedListNodeTest.TestMergeSingles" />
+                        <Node UniqueName="[0-1016]TreeCore.Debug.LinkedListNodeTest.TestMultiAdd" />
+                        <Node UniqueName="[0-1015]TreeCore.Debug.LinkedListNodeTest.TestSingleAdd" />
+                        <Node UniqueName="[0-1024]TreeCore.Debug.LinkedListNodeTest.TestSplitEnd" />
+                        <Node UniqueName="[0-1025]TreeCore.Debug.LinkedListNodeTest.TestSplitLenght" />
+                        <Node UniqueName="[0-1023]TreeCore.Debug.LinkedListNodeTest.TestSplitMiddle" />
+                        <Node UniqueName="[0-1022]TreeCore.Debug.LinkedListNodeTest.TestSplitZero" />
+                      </Nodes>
+                    </Node>
+                    <Node UniqueName="[0-1026]TreeCore.Debug.LinkedNodeListTest">
+                      <Nodes>
+                        <Node UniqueName="[0-1027]TreeCore.Debug.LinkedNodeListTest.TestConstruct" />
+                        <Node UniqueName="[0-1029]TreeCore.Debug.LinkedNodeListTest.TestMultiConstruct" />
+                        <Node UniqueName="[0-1028]TreeCore.Debug.LinkedNodeListTest.TestSingleConstruct" />
+                      </Nodes>
+                    </Node>
+                    <Node UniqueName="[0-1001]TreeCore.Debug.NodeListTest&lt;NodeList&gt;" Expanded="true">
+                      <Nodes>
+                        <Node UniqueName="[0-1002]TreeCore.Debug.NodeListTest`1[[TreeCore.LinkedNodeList, TreeCore, Version=0.1.1.28748, Culture=neutral, PublicKeyToken=null]]" Expanded="true">
+                          <Nodes>
+                            <Node UniqueName="[0-1012]TreeCore.Debug.NodeListTest`1[[TreeCore.LinkedNodeList, TreeCore, Version=0.1.1.28748, Culture=neutral, PublicKeyToken=null]].MaxAddTest" />
+                            <Node UniqueName="[0-1011]TreeCore.Debug.NodeListTest`1[[TreeCore.LinkedNodeList, TreeCore, Version=0.1.1.28748, Culture=neutral, PublicKeyToken=null]].PerformanceComparison" />
+                            <Node UniqueName="[0-1003]TreeCore.Debug.NodeListTest`1[[TreeCore.LinkedNodeList, TreeCore, Version=0.1.1.28748, Culture=neutral, PublicKeyToken=null]].TestDoubleAdd" />
+                            <Node UniqueName="[0-1007]TreeCore.Debug.NodeListTest`1[[TreeCore.LinkedNodeList, TreeCore, Version=0.1.1.28748, Culture=neutral, PublicKeyToken=null]].TestDoubleInsertion" />
+                            <Node UniqueName="[0-1004]TreeCore.Debug.NodeListTest`1[[TreeCore.LinkedNodeList, TreeCore, Version=0.1.1.28748, Culture=neutral, PublicKeyToken=null]].TestMultiAdd" />
+                            <Node UniqueName="[0-1010]TreeCore.Debug.NodeListTest`1[[TreeCore.LinkedNodeList, TreeCore, Version=0.1.1.28748, Culture=neutral, PublicKeyToken=null]].TestMultiBackInsertion" />
+                            <Node UniqueName="[0-1009]TreeCore.Debug.NodeListTest`1[[TreeCore.LinkedNodeList, TreeCore, Version=0.1.1.28748, Culture=neutral, PublicKeyToken=null]].TestMultiFrontInsertion" />
+                            <Node UniqueName="[0-1008]TreeCore.Debug.NodeListTest`1[[TreeCore.LinkedNodeList, TreeCore, Version=0.1.1.28748, Culture=neutral, PublicKeyToken=null]].TestMultiMiddleInsertion" />
+                            <Node UniqueName="[0-1005]TreeCore.Debug.NodeListTest`1[[TreeCore.LinkedNodeList, TreeCore, Version=0.1.1.28748, Culture=neutral, PublicKeyToken=null]].TestSingleAdd" />
+                            <Node UniqueName="[0-1006]TreeCore.Debug.NodeListTest`1[[TreeCore.LinkedNodeList, TreeCore, Version=0.1.1.28748, Culture=neutral, PublicKeyToken=null]].TestSingleInsertion" />
+                          </Nodes>
+                        </Node>
+                      </Nodes>
+                    </Node>
+                  </Nodes>
+                </Node>
+              </Nodes>
+            </Node>
+          </Nodes>
+        </Node>
+      </Nodes>
+    </Node>
+  </Nodes>
+</VisualState>

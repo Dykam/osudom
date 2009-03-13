@@ -1,0 +1,72 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{7C6E9F5B-C1FF-45DE-9E38-176D4CD12986}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Serializer</RootNamespace>
+    <AssemblyName>Serializer</AssemblyName>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>..\..\bin\Debug\Serializers\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>false</Optimize>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Serializer</AssemblyName>
+    <RootNamespace>Serializer</RootNamespace>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>..\..\bin\Release\Serializers\</OutputPath>
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>true</Optimize>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Serializer</AssemblyName>
+    <RootNamespace>Serializer</RootNamespace>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <Folder Include="Binary" />
+    <Folder Include="Binary\Base64" />
+    <Folder Include="Binary\Base64\parser" />
+    <Folder Include="Binary\Base64\writer" />
+    <Folder Include="Binary\Compress" />
+    <Folder Include="Binary\Compress\parser" />
+    <Folder Include="Binary\Compress\writer" />
+    <Folder Include="Binary\parser" />
+    <Folder Include="Binary\writer" />
+    <Folder Include="JSON" />
+    <Folder Include="JSON\parser" />
+    <Folder Include="JSON\writer" />
+    <Folder Include="SGML" />
+    <Folder Include="SGML\parser" />
+    <Folder Include="SGML\writer" />
+    <Folder Include="SGML\XHTML" />
+    <Folder Include="SGML\XHTML\HtmlToXhtml" />
+    <Folder Include="SGML\XHTML\parser" />
+    <Folder Include="SGML\XHTML\writer" />
+    <Folder Include="SGML\XML" />
+    <Folder Include="SGML\XML\parser" />
+    <Folder Include="SGML\XML\writer" />
+  </ItemGroup>
+</Project>

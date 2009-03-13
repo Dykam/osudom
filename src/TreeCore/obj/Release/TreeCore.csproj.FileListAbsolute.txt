@@ -1,0 +1,6 @@
+L:\Documents\Dev\C#\OSUDOM\bin\Release\TreeCore\TreeCore.dll
+L:\Documents\Dev\C#\OSUDOM\bin\Release\TreeCore\TreeCore.pdb
+L:\Documents\Dev\C#\OSUDOM\src\TreeCore\obj\Release\ResolveAssemblyReference.cache
+L:\Documents\Dev\C#\OSUDOM\src\TreeCore\obj\Release\TreeCore.dll
+L:\Documents\Dev\C#\OSUDOM\src\TreeCore\obj\Release\TreeCore.pdb
+L:\Documents\Dev\C#\OSUDOM\bin\Release\TreeCore\TreeCore.XML

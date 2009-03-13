@@ -1,0 +1,5 @@
+..\..\bin\Debug\TreeDebug\TreeDebug.exe
+..\..\bin\Debug\TreeDebug\TreeDebug.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\TreeDebug.exe
+obj\Debug\TreeDebug.pdb

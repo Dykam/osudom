@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{28FFA13A-AACA-4B9D-8158-3BF29A76DA6C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6B55E21D-4CB2-4F9C-80BB-ED138518F6C4}"
+	ProjectSection(SolutionItems) = preProject
+		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
+		OSUDOM.vsmdi = OSUDOM.vsmdi
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serializer", "src\Serializer\Serializer.csproj", "{A8592653-D444-40F9-BD0D-CCD33F83AA94}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C4C075C6-4F3E-45BF-94A1-516BB20310F5} = {C4C075C6-4F3E-45BF-94A1-516BB20310F5}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeDebug", "src\TreeDebug\TreeDebug.csproj", "{3C34DA4F-E16D-404E-8E74-9FCBD5DC6A22}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A8592653-D444-40F9-BD0D-CCD33F83AA94} = {A8592653-D444-40F9-BD0D-CCD33F83AA94}
+		{C4C075C6-4F3E-45BF-94A1-516BB20310F5} = {C4C075C6-4F3E-45BF-94A1-516BB20310F5}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeCore", "src\TreeCore\TreeCore.csproj", "{C4C075C6-4F3E-45BF-94A1-516BB20310F5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Description = OSUDOM targets at unifying data storage, using parsers/writers creating a Tree of the data.
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A8592653-D444-40F9-BD0D-CCD33F83AA94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8592653-D444-40F9-BD0D-CCD33F83AA94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8592653-D444-40F9-BD0D-CCD33F83AA94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8592653-D444-40F9-BD0D-CCD33F83AA94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C34DA4F-E16D-404E-8E74-9FCBD5DC6A22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C34DA4F-E16D-404E-8E74-9FCBD5DC6A22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C34DA4F-E16D-404E-8E74-9FCBD5DC6A22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C34DA4F-E16D-404E-8E74-9FCBD5DC6A22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4C075C6-4F3E-45BF-94A1-516BB20310F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4C075C6-4F3E-45BF-94A1-516BB20310F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4C075C6-4F3E-45BF-94A1-516BB20310F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4C075C6-4F3E-45BF-94A1-516BB20310F5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

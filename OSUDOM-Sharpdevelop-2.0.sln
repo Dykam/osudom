@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+# SharpDevelop 2.2.1.2648
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serializer-Sharpdevelop-2.0", "src\Serializer\Serializer-Sharpdevelop-2.0.csproj", "{7C6E9F5B-C1FF-45DE-9E38-176D4CD12986}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeCore-Sharpdevelop-2.0", "src\TreeCore\TreeCore-Sharpdevelop-2.0.csproj", "{0DE03F41-3A46-4DEE-9525-382EC438C8FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeDebug-Sharpdevelop-2.0", "src\TreeDebug\TreeDebug-Sharpdevelop-2.0.csproj", "{9564F718-013E-4C39-A8B7-2DAD6D45C6B9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		428FB77A-B9E6-4AE6-AB0B-E7E3E7989593.Debug|Any CPU.Build.0 = Debug|Any CPU
+		428FB77A-B9E6-4AE6-AB0B-E7E3E7989593.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		428FB77A-B9E6-4AE6-AB0B-E7E3E7989593.Release|Any CPU.Build.0 = Release|Any CPU
+		428FB77A-B9E6-4AE6-AB0B-E7E3E7989593.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C6E9F5B-C1FF-45DE-9E38-176D4CD12986}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C6E9F5B-C1FF-45DE-9E38-176D4CD12986}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C6E9F5B-C1FF-45DE-9E38-176D4CD12986}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C6E9F5B-C1FF-45DE-9E38-176D4CD12986}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DE03F41-3A46-4DEE-9525-382EC438C8FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DE03F41-3A46-4DEE-9525-382EC438C8FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DE03F41-3A46-4DEE-9525-382EC438C8FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DE03F41-3A46-4DEE-9525-382EC438C8FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		556EFA4D-2485-4523-B786-339321A1465A.Debug|Any CPU.Build.0 = Debug|Any CPU
+		556EFA4D-2485-4523-B786-339321A1465A.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		556EFA4D-2485-4523-B786-339321A1465A.Release|Any CPU.Build.0 = Release|Any CPU
+		556EFA4D-2485-4523-B786-339321A1465A.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9564F718-013E-4C39-A8B7-2DAD6D45C6B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9564F718-013E-4C39-A8B7-2DAD6D45C6B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9564F718-013E-4C39-A8B7-2DAD6D45C6B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9564F718-013E-4C39-A8B7-2DAD6D45C6B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2790C56-6293-489E-A000-59103C4958E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2790C56-6293-489E-A000-59103C4958E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2790C56-6293-489E-A000-59103C4958E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2790C56-6293-489E-A000-59103C4958E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D08431F-8104-4865-B3F5-6275CB9E3A37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D08431F-8104-4865-B3F5-6275CB9E3A37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D08431F-8104-4865-B3F5-6275CB9E3A37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D08431F-8104-4865-B3F5-6275CB9E3A37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B33561EF-D094-4FD3-84F8-0AD3C2665AFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B33561EF-D094-4FD3-84F8-0AD3C2665AFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B33561EF-D094-4FD3-84F8-0AD3C2665AFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B33561EF-D094-4FD3-84F8-0AD3C2665AFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+EndGlobal

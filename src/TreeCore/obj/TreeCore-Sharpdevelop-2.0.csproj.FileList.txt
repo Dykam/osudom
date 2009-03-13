@@ -1,0 +1,5 @@
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\TreeCore.dll
+obj\Debug\TreeCore.pdb
+..\..\bin\Debug\TreeCore\TreeCore.dll
+..\..\bin\Debug\TreeCore\TreeCore.pdb

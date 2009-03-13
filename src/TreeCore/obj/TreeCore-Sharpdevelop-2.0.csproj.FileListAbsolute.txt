@@ -1,0 +1,10 @@
+F:\Documents\Dev\C#\OSUDOM\src\TreeCore\obj\Debug\ResolveAssemblyReference.cache
+F:\Documents\Dev\C#\OSUDOM\src\TreeCore\obj\Debug\TreeCore.dll
+F:\Documents\Dev\C#\OSUDOM\bin\Debug\TreeCore\TreeCore.dll
+F:\Documents\Dev\C#\OSUDOM\bin\Debug\TreeCore\TreeCore.pdb
+F:\Documents\Dev\C#\OSUDOM\src\TreeCore\obj\Debug\TreeCore.pdb
+L:\Documents\Dev\C#\OSUDOM\bin\Debug\TreeCore\TreeCore.dll
+L:\Documents\Dev\C#\OSUDOM\bin\Debug\TreeCore\TreeCore.pdb
+L:\Documents\Dev\C#\OSUDOM\src\TreeCore\obj\Debug\ResolveAssemblyReference.cache
+L:\Documents\Dev\C#\OSUDOM\src\TreeCore\obj\Debug\TreeCore.dll
+L:\Documents\Dev\C#\OSUDOM\src\TreeCore\obj\Debug\TreeCore.pdb

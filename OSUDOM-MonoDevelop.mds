@@ -1,0 +1,24 @@
+<Combine name="OSUDOM-MonoDevelop" fileversion="2.0" outputpath="bin/">
+  <Configurations active="Debug">
+    <Configuration name="Debug" ctype="CombineConfiguration">
+      <Entry build="True" name="TreeCore-MonoDevelop" configuration="Debug" />
+      <Entry build="True" name="TreeDebug-MonoDevelop" configuration="Debug" />
+      <Entry build="True" name="Serializer-MonoDevelop" configuration="Debug" />
+    </Configuration>
+    <Configuration name="Release" ctype="CombineConfiguration">
+      <Entry build="True" name="TreeCore-MonoDevelop" configuration="Release" />
+      <Entry build="True" name="TreeDebug-MonoDevelop" configuration="Release" />
+      <Entry build="True" name="Serializer-MonoDevelop" configuration="Release" />
+    </Configuration>
+  </Configurations>
+  <StartMode startupentry="TreeDebug-MonoDevelop" single="False">
+    <Execute type="None" entry="TreeCore-MonoDevelop" />
+    <Execute type="None" entry="Serializer-MonoDevelop" />
+    <Execute type="Execute" entry="TreeDebug-MonoDevelop" />
+  </StartMode>
+  <Entries>
+    <Entry filename="src/TreeCore/TreeCore-MonoDevelop.csproj" />
+    <Entry filename="src/TreeDebug/TreeDebug-MonoDevelop.csproj" />
+    <Entry filename="src/Serializer/Serializer-MonoDevelop.csproj" />
+  </Entries>
+</Combine>

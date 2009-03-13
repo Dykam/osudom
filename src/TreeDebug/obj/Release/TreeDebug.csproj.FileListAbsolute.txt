@@ -1,0 +1,4 @@
+L:\Documents\Dev\C#\OSUDOM\bin\Release\TreeDebug\TreeDebug.exe
+L:\Documents\Dev\C#\OSUDOM\bin\Release\TreeDebug\TreeDebug.pdb
+L:\Documents\Dev\C#\OSUDOM\src\TreeDebug\obj\Release\TreeDebug.exe
+L:\Documents\Dev\C#\OSUDOM\src\TreeDebug\obj\Release\TreeDebug.pdb

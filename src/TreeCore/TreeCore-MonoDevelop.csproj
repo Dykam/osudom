@@ -1,0 +1,84 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{0DE03F41-3A46-4DEE-9525-382EC438C8FB}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>TreeCore</RootNamespace>
+    <AssemblyName>TreeCore</AssemblyName>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>..\..\bin\Debug\TreeCore\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>false</Optimize>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <OutputType>Library</OutputType>
+    <AssemblyName>TreeCore</AssemblyName>
+    <RootNamespace>TreeCore</RootNamespace>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>..\..\bin\Release\TreeCore\</OutputPath>
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>true</Optimize>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+    <OutputType>Library</OutputType>
+    <AssemblyName>TreeCore</AssemblyName>
+    <RootNamespace>TreeCore</RootNamespace>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbstractNodeList.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="ChildNodesDeletedEventArgs.cs" />
+    <Compile Include="ChildNodesSplittedEventArgs.cs" />
+    <Compile Include="CleanedUpEventArgs.cs" />
+    <Compile Include="Debug\LinkedListNodeTest.cs" />
+    <Compile Include="Debug\LinkedNodeListTest.cs" />
+    <Compile Include="Debug\NodeListTest.cs" />
+    <Compile Include="Delegates.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="IManualCleanedNodeList.cs" />
+    <Compile Include="INode.cs" />
+    <Compile Include="INodeList.cs" />
+    <Compile Include="LinkedListNode.cs" />
+    <Compile Include="LinkedNodeList.cs" />
+    <Compile Include="NodeDeletedEventArgs.cs" />
+    <Compile Include="NodesAddedEventArgs.cs" />
+    <Compile Include="NodesManager.cs" />
+    <Compile Include="Node.cs" />
+    <Compile Include="NodeSplittedEventArgs.cs" />
+    <Compile Include="NodesRemovedEventArgs.cs" />
+    <Compile Include="ThreadSafeLinkedNodeList.cs" />
+    <None Include="README.txt" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <Reference Include="nunit.framework, Version=2.4.7.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77">
+      <HintPath>..\..\..\..\..\..\PortableApps\NUnit\bin\net-2.0\framework\nunit.framework.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Folder Include="Debug" />
+  </ItemGroup>
+</Project>

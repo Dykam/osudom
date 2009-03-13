@@ -1,0 +1,10 @@
+F:\Documents\Dev\C#\OSUDOM\bin\Debug\TreeDebug\TreeDebug.exe
+F:\Documents\Dev\C#\OSUDOM\bin\Debug\TreeDebug\TreeDebug.pdb
+F:\Documents\Dev\C#\OSUDOM\src\TreeDebug\obj\Debug\ResolveAssemblyReference.cache
+F:\Documents\Dev\C#\OSUDOM\src\TreeDebug\obj\Debug\TreeDebug.exe
+F:\Documents\Dev\C#\OSUDOM\src\TreeDebug\obj\Debug\TreeDebug.pdb
+L:\Documents\Dev\C#\OSUDOM\bin\Debug\TreeDebug\TreeDebug.exe
+L:\Documents\Dev\C#\OSUDOM\bin\Debug\TreeDebug\TreeDebug.pdb
+L:\Documents\Dev\C#\OSUDOM\src\TreeDebug\obj\Debug\ResolveAssemblyReference.cache
+L:\Documents\Dev\C#\OSUDOM\src\TreeDebug\obj\Debug\TreeDebug.exe
+L:\Documents\Dev\C#\OSUDOM\src\TreeDebug\obj\Debug\TreeDebug.pdb
